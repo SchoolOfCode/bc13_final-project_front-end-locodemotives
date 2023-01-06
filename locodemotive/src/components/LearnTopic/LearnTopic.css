@@ -3,11 +3,14 @@
     flex-flow: column nowrap;
     background-color: #D4D4D4;
     width: 300px;
-    height: 325px;
+    height: 300px;
 }
 
 .topic-type {
-    background-color: #828282;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #FFA500;
     font-size: 0.5em;
     font-weight: 300;
     height: 30px;
@@ -16,6 +19,8 @@
 .topic-body {
     display: flex;
     flex-flow: column nowrap;
+    align-items: flex-start;
+    padding: 10px;
 }
 
 .topic-body h1 {

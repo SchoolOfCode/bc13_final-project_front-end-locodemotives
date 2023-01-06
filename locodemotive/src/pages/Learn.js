@@ -34,6 +34,11 @@ export default function Learn() {
                     </div>
                     <div className="learn-topic-container">
                         <LearnTopic/>
+                        <LearnTopic/>
+                        <LearnTopic/>
+                        <LearnTopic/>
+                        <LearnTopic/>
+                        <LearnTopic/>
                     </div>  
                 </div>
             </div>
