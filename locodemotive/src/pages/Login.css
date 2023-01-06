@@ -1,0 +1,66 @@
+body {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='560' preserveAspectRatio='none' viewBox='0 0 1920 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1099%26quot%3b)' fill='none'%3e%3cpath d='M 0%2c167 C 128%2c147.6 384%2c74.6 640%2c70 C 896%2c65.4 1024%2c153 1280%2c144 C 1536%2c135 1792%2c48.8 1920%2c25L1920 560L0 560z' fill='rgba(255%2c 165%2c 0%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c238 C 192%2c255.2 576%2c333.8 960%2c324 C 1344%2c314.2 1728%2c216 1920%2c189L1920 560L0 560z' fill='rgba(235%2c 146%2c 38%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c463 C 128%2c471.8 384%2c520.4 640%2c507 C 896%2c493.6 1024%2c400.2 1280%2c396 C 1536%2c391.8 1792%2c468 1920%2c486L1920 560L0 560z' fill='rgba(238%2c 55%2c 128%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1099'%3e%3crect width='1920' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    /* background-size: 100vw 100vh; */
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.content {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background-color: #fff;
+    gap: 15px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    width: max-content;
+    height: max-content;
+    box-shadow: 0px 0px 24px -5px rgba(0, 0, 0, 0.76);
+    -webkit-box-shadow: 0px 0px 24px -5px rgba(0, 0, 0, 0.76);
+}
+
+.logo-container {
+    background-color: #FFA500;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.logo-container img {
+    width: 250px;
+    height: 130px;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login-form-container input {
+    border: none;
+    background-color: #F0F0F0;
+    padding: 0.75em;
+    border-radius: 5px;
+}
+
+.login-form-container button {
+    border: none;
+    background-color: #FFA500;
+    border-radius: 5px;
+    height: 60px;
+    width: 125%;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+}
