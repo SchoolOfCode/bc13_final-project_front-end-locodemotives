@@ -1,0 +1,30 @@
+.topic-container {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #D4D4D4;
+    width: 300px;
+    height: 325px;
+}
+
+.topic-type {
+    background-color: #828282;
+    font-size: 0.5em;
+    font-weight: 300;
+    height: 30px;
+}
+
+.topic-body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.topic-body h1 {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.topic-body p {
+    font-size: 1.25em;
+    font-weight: 200;
+}
+

@@ -1,4 +1,5 @@
 import './Learn.css'
+import LearnTopic from '../components/LearnTopic/LearnTopic'
 
 export default function Learn() {
     return (
@@ -31,7 +32,9 @@ export default function Learn() {
                             <button>Forward</button>
                         </div>
                     </div>
-
+                    <div className="learn-topic-container">
+                        <LearnTopic/>
+                    </div>  
                 </div>
             </div>
         </div>
