@@ -1,0 +1,25 @@
+.new-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: column;
+    width: 250px;
+    height: 250px;
+}
+
+.new-content h1 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.new-content p {
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.new-content button {
+    background-color: #FFA500;
+    font-size: 1.25em;
+    font-weight: 300;
+    border: none;
+}
