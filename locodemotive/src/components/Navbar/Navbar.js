@@ -6,6 +6,7 @@ export default function Navbar() {
         <nav className="nav">
             <Link to="/home" className="site-title"><img src={Logo} alt="Locodemotive Logo"></img></Link>
             <ul>
+                <CustomLink to="/home">Home</CustomLink>
                 <CustomLink to="/learn">Learn</CustomLink>
                 <CustomLink to="/discuss">Discuss</CustomLink>
                 <CustomLink to="/settings">ProfileImg</CustomLink>
