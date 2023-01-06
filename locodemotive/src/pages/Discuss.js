@@ -1,5 +1,7 @@
 export default function Discuss() {
-    <>
-        <h1>Discuss</h1>
-    </>
+    return (
+        <>
+            <h1>Discuss</h1>
+        </>
+    )
 }

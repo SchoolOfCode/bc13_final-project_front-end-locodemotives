@@ -1,5 +1,7 @@
 export default function Learn() {
-    <>
-        <h1>Learn</h1>
-    </>
+    return (
+        <>
+            <h1>Learn</h1>
+        </>
+    )
 }
