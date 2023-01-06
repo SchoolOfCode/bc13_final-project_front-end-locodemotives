@@ -1,0 +1,68 @@
+:root {
+    background-image: url('./Content/HomeBackground.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 50vw 60vw;
+    height: 100vh;
+}
+
+.my-learning {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-flow: row reverse;
+    gap: 5vw;
+}
+
+.my-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 3vh;
+    margin-bottom: 70px;
+}
+
+.my-area select {
+    border: none;
+    width: 40vw;
+    height: 100px;
+    font-size: 2rem;
+    margin-left: 30px;
+    padding: 20px;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+}
+
+.my-area h1 {
+    align-self: flex-start;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.whats-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 3vh;
+}
+
+.whats-new h1 {
+    align-self: flex-start;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.my-channels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    gap: 3vh;
+}
+
+.my-channels h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}

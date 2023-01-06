@@ -1,6 +1,8 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import './Navbar.css'
 import Logo from './Logo.png';
 import Bell from './Bell.svg';
+import ProfilePlaceholder from './ProfilePlaceholder.png'
 
 export default function Navbar() {
     return (
@@ -11,8 +13,8 @@ export default function Navbar() {
                 <CustomLink to="/home">Home</CustomLink>
                 <CustomLink to="/learn">Learn</CustomLink>
                 <CustomLink to="/discuss">Discuss</CustomLink>
-
-                <CustomLink to="/settings">ProfileImg</CustomLink>
+                <li><button id='bell'><img src={Bell} alt="Notification Bell"></img></button></li>
+                <CustomLink to="/settings"><span><img id="pfp" src={ProfilePlaceholder} alt="ProfileImage"></img></span></CustomLink>
             </ul>
         </nav>
     )
