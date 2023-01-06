@@ -70,4 +70,5 @@
 .new-content-container {
     display: flex;
     flex-flow: row;
+    gap: 30px;
 }

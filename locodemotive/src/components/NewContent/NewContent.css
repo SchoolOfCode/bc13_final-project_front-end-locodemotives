@@ -5,11 +5,13 @@
     flex-flow: column;
     width: 250px;
     height: 250px;
+    background-color: #F3F3F3;
+    padding: 10px;
 }
 
 .new-content h1 {
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .new-content p {
@@ -20,6 +22,9 @@
 .new-content button {
     background-color: #FFA500;
     font-size: 1.25em;
-    font-weight: 300;
+    font-weight: 400;
     border: none;
+    width: 100%;
+    align-self: flex-end;
+    justify-self: flex-end;
 }
