@@ -1,5 +1,5 @@
-import Pluralsight from './Images/Pluralsight.svg';
-import Sharepoint from './Images/Sharepoint.svg';
+import Pluralsight from './Images/Pluralsight.png';
+import Sharepoint from './Images/Sharepoint.png';
 import Resonate from './Images/Resonate.png';
 import './ChannelContent.css'
 

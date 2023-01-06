@@ -3,7 +3,7 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .channel {
@@ -11,18 +11,36 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
+    padding: 15px;
 }
 
 .channel img {
-    width: 150px;
-    height: 150px;
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
     align-self: center;
     justify-self: center;
 }
 
 .channel h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 200;
+    color: #fff;
+}
+
+.channel:nth-child(1) {
+    background: linear-gradient(180deg, #E34412 0%, #EE3780 100%);
+    border-radius: 5px;
+}
+
+.channel:nth-child(2) {
+    background: linear-gradient(180deg, #01858A 0%, #189CA1 48.44%, #25C7CA 100%);
+    border-radius: 5px;
+}
+
+.channel:nth-child(3) {
+    background: linear-gradient(180deg, #EBB656 0%, #E74F8B 100%);
+    border-radius: 5px;
 }

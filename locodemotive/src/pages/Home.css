@@ -9,8 +9,9 @@
 .my-learning {
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-flow: row reverse;
+    padding: 0vw 15vw 0vw 15vw;
     /* gap: 0vw; */
 }
 
