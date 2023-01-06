@@ -11,7 +11,7 @@
     align-items: flex-start;
     justify-content: space-around;
     flex-flow: row reverse;
-    gap: 5vw;
+    /* gap: 0vw; */
 }
 
 .my-area {
@@ -20,7 +20,7 @@
     align-items: center;
     flex-flow: column;
     gap: 3vh;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .my-area select {
@@ -58,12 +58,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    flex-flow: column wrap;
     gap: 3vh;
 }
 
 .my-channels h1 {
-    font-size: 3rem;
+    font-size: 3em;
     font-weight: 400;
 }
 

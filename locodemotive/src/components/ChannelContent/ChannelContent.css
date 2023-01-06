@@ -1,0 +1,28 @@
+.channel-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.channel {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+
+.channel img {
+    width: 150px;
+    height: 150px;
+    align-self: center;
+    justify-self: center;
+}
+
+.channel h2 {
+    font-size: 2em;
+    font-weight: 200;
+}

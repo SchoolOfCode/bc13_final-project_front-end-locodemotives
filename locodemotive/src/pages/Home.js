@@ -1,5 +1,6 @@
 import './Home.css'
 import NewContent from '../components/NewContent/NewContent'
+import ChannelContent from '../components/ChannelContent/ChannelContent'
 
 export default function Home() {
     return(
@@ -27,6 +28,7 @@ export default function Home() {
             </div>
             <div className='my-channels'>
                 <h1>My Channels</h1>
+                <ChannelContent/>
             </div>
         </div>
     )

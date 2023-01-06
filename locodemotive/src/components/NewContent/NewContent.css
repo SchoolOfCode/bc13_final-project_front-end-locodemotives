@@ -1,7 +1,5 @@
 .new-content {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-flow: column;
     width: 250px;
     height: 250px;
