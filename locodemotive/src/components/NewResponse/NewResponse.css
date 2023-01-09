@@ -1,4 +1,4 @@
-.new-post {
+.new-response {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -9,28 +9,19 @@
     padding: 30px;
 }
 
-.new-post h1 {
+.new-response h1 {
     font-size: 2.5em;
     font-weight: 400;
 }
 
-.new-post .new-post-submission {
+.new-response .new-response-submission {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
     gap: 30px;
 }
 
-.new-post .new-post-submission input {
-    border: none;
-    height: 50px;
-    padding: 15px;
-    background-color: #D9D9D9;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.new-post .new-post-submission textarea {
+.new-response .new-response-submission textarea {
     height: 300px;
     border: none;
     background-color: #D9D9D9;
@@ -39,16 +30,7 @@
     border-radius: 5px;
 }
 
-.new-post .new-post-submission select {
-    border: none;
-    background-color: #D9D9D9;
-    height: 50px;
-    border-radius: 5px;
-    font-size: 18px;
-    padding: 10px;
-}
-
-.new-post button {
+.new-response button {
     border: none;
     background-color: #FFA500;
     color: #fff;
