@@ -1,0 +1,35 @@
+.settings-account-content {
+    display: none;
+}
+
+.settings-page {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+}
+
+.settings-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #D9D9D9;
+    width: 75%;
+    margin-left: 12vw;
+    height: 600px;
+}
+
+.settings-navbar ul {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    list-style: none;
+}
+
+.settings-navbar button {
+    border: none;
+    width: 150px;
+    height: 100px;
+}
