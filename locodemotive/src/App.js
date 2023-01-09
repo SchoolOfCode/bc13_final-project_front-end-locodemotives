@@ -5,6 +5,8 @@ import Learn from './pages/Learn.js'
 import Discuss from './pages/Discuss.js'
 import Settings from './pages/Settings.js'
 import Login from './pages/Login';
+import CreateResponse from './pages/CreateResponse';
+import CreatePost from './pages/CreatePost';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
             <Route path="/learn" element={<Learn/>} />
             <Route path="/discuss" element={<Discuss/>} />
             <Route path="/settings" element={<Settings/>} />
+            <Route path="/new_response" element={<CreateResponse/>} />
+            <Route path="/new_post" element={<CreatePost/>} />
           </Routes>
         </div>
     </>

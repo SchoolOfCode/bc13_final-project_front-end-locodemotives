@@ -1,4 +1,5 @@
 import './Response.css'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 export default function Response() {
     return (
@@ -11,8 +12,19 @@ export default function Response() {
                         <p>Response</p>
                     </div>
                 </div>
-                <button>New Response</button>
+                <CustomLink to="/new_response">New Response</CustomLink>
             </div>
         </div>
+    )
+}
+
+
+function CustomLink({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+    return (
+        <button className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>{children}</Link>
+        </button>
     )
 }
