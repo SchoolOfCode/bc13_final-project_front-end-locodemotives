@@ -17,7 +17,6 @@ export default function Discuss() {
             <div className="post-container">
                 <Post/>
                 <Post/>
-                <Post/>
             </div>
         </div>
     )
