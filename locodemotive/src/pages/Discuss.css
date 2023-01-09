@@ -1,0 +1,44 @@
+.discuss-content {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.navigation-bar {
+    padding-top: 5vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.navigation-bar input {
+    border: none;
+    background-color: #D9D9D9;
+    padding: 15px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.navigation-bar button {
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #FFA500;
+    color: #fff;
+    width: 100px;
+    font-size: 0.9em;
+}
+
+.navigation-bar button:first-of-type {
+    margin-right: 22vw;
+    margin-left: -1vw;
+}
+
+.navigation-bar select {
+    border: none;
+    background-color: #D9D9D9;
+    padding: 15px;
+    border-radius: 5px;
+    width: 150px;
+}
