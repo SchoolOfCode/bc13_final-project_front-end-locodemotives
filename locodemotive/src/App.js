@@ -8,25 +8,79 @@ import Login from './pages/Login';
 import CreateResponse from './pages/CreateResponse';
 import CreatePost from './pages/CreatePost';
 import CreateResource from './pages/CreateResource';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const login = () => {
+    setIsAuthenticated(true);
+    <Navigate to='/home' replace/>
+  };
+
+  const logout = () => {
+    setIsAuthenticated(false);
+  };
+
   return (
-    <>
-      <Navbar/>
-        <div className='App'>
-          <Routes>
-            <Route path='/login' element={<Login/>} />
-            <Route path="/home" element={<Home/>} />
-            <Route path="/learn" element={<Learn/>} />
-            <Route path="/discuss" element={<Discuss/>} />
-            <Route path="/settings" element={<Settings/>} />
-            <Route path="/new_response" element={<CreateResponse/>} />
-            <Route path="/new_post" element={<CreatePost/>} />
-            <Route path="/new_resource" element={<CreateResource/>} />
-          </Routes>
-        </div>
-    </>
+    <div className='App'>
+      <Navbar isAuthenticated={isAuthenticated} login={login} logout={logout}/>
+        <Routes>
+          <Route path='/login' element={<Login login={login} logout={logout}/>} />
+          <Route path='/home' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<Home/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/learn' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<Learn/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/discuss' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<Discuss/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/settings' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<Settings/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/new_response' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<CreateResponse/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/new_post' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<CreatePost/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+          <Route path='/new_resource' element={
+            <PrivateRoute 
+              redirectTo="/login" 
+              component={<CreateResource/>} 
+              isAuthenticated={isAuthenticated}
+            />
+          }/>
+        </Routes>
+    </div>
   );
 }
 

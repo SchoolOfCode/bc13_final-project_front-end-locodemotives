@@ -104,3 +104,26 @@ body {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
+
+.nav button {
+  border: none;
+  font-size: 20px;
+  background-color: #FFA500;
+  color: #fff;
+  font-weight: 600;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav button:hover {
+  background-color: rgb(230, 230, 230);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  cursor: pointer;
+}

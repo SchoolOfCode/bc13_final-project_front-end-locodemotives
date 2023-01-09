@@ -4,17 +4,41 @@ import Logo from './Logo.png';
 import Bell from './Bell.svg';
 import ProfilePlaceholder from './ProfilePlaceholder.png'
 
-export default function Navbar() {
+export default function Navbar({ isAuthenticated, login, logout}) {
     return (
         <nav className="nav">
             <Link to="/home" className="site-title"><img src={Logo} alt="Locodemotive Logo"></img></Link>
             <ul>
+            {isAuthenticated ? (
+                <button onClick={logout}>Log-out</button>
+            ) : (
                 <CustomLink to="/login">Login</CustomLink>
+            )}
+            {isAuthenticated ? (
                 <CustomLink to="/home">Home</CustomLink>
+            ) : (
+                <></>
+            )}
+            {isAuthenticated ? (
                 <CustomLink to="/learn">Learn</CustomLink>
+            ) : (
+                <></>
+            )}
+            {isAuthenticated ? (
                 <CustomLink to="/discuss">Discuss</CustomLink>
+            ) : (
+                <></>
+            )}
+            {isAuthenticated ? (
                 <li><button id='bell'><img src={Bell} alt="Notification Bell"></img></button></li>
+            ) : (
+                <></>
+            )}
+            {isAuthenticated ? (
                 <CustomLink to="/settings"><span><img id="pfp" src={ProfilePlaceholder} alt="ProfileImage"></img></span></CustomLink>
+            ) : (
+                <></>
+            )}
             </ul>
         </nav>
     )

@@ -1,7 +1,8 @@
 import './Login.css'
 import Logo from './Content/Logo.png'
 
-export default function Login() {
+export default function Login({ login, logout }) {
+
     return (
         <div className='content'>
             <div className='login-container'>
@@ -11,7 +12,7 @@ export default function Login() {
                 <div className='login-form-container'>
                     <input type="email" placeholder='Email'></input>
                     <input type="password" placeholder='Password'></input>
-                    <button>Login</button>
+                    <button onClick={login}>Login</button>
                 </div>
             </div>
         </div>
