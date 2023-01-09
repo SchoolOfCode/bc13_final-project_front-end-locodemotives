@@ -1,3 +1,5 @@
+import './NewResource.css'
+
 export default function NewResource() {
     return (
     <div className="new-resource">
@@ -16,8 +18,8 @@ export default function NewResource() {
                 <option>Type 2</option>
                 <option>Type 3</option>
             </select>
+            <button type="submit">Submit</button>
         </div>
-        <button type="submit">Submit</button>
     </div>
     )
 }

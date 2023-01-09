@@ -7,6 +7,7 @@ import Settings from './pages/Settings.js'
 import Login from './pages/Login';
 import CreateResponse from './pages/CreateResponse';
 import CreatePost from './pages/CreatePost';
+import CreateResource from './pages/CreateResource';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/settings" element={<Settings/>} />
             <Route path="/new_response" element={<CreateResponse/>} />
             <Route path="/new_post" element={<CreatePost/>} />
+            <Route path="/new_resource" element={<CreateResource/>} />
           </Routes>
         </div>
     </>

@@ -44,7 +44,7 @@
 
 .explore-header-top a {
     text-decoration: none;
-    color: #FFA500;
+    color: #ffffff;
 }
 
 .explore-header-selectors {
@@ -84,4 +84,14 @@
     flex-flow: row wrap;
     align-items: center;
     gap: 30px;
+}
+
+.explore-header-top button {
+    border: none;
+    color: #fff;
+    background-color: #FFA500;
+    font-size: 1em;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
 }

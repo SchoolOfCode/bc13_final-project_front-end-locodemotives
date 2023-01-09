@@ -1,5 +1,6 @@
 import './Learn.css'
 import LearnTopic from '../components/LearnTopic/LearnTopic'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 export default function Learn() {
     return (
@@ -20,7 +21,7 @@ export default function Learn() {
                 <div className="explore-header">
                     <div className="explore-header-top">
                         <h1>Explore</h1>
-                        <a href="./add">Add Resource</a>
+                        <CustomLink to="/new_resource">Add Resource</CustomLink>
                     </div>
                     <div className="explore-header-selectors">
                         <select name="Type">
@@ -43,5 +44,15 @@ export default function Learn() {
                 </div>
             </div>
         </div>
+    )
+}
+
+function CustomLink({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+    return (
+        <button className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>{children}</Link>
+        </button>
     )
 }
