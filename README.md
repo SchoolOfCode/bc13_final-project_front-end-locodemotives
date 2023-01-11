@@ -31,6 +31,7 @@ Move to the repository
 
 ```bash
   cd locodemotives
+```
 
 Install dependencies
 
