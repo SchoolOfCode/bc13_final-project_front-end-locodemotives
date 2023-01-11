@@ -2,7 +2,8 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: flex-start
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .post {
@@ -10,8 +11,9 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    row-gap: 2vw;
+    /* row-gap: 2vw; */
     color: #fff;
+    width: 80%;
 }
 
 .post-info {
@@ -24,18 +26,20 @@
     gap: 4vw;
     background-color: #FFA500;
     padding: 0px 3vw 0px 3vw;
-    margin-bottom: -40px;
+    /* margin-bottom: -40px; */
+    width: 100%;
 }
 
 .post-info .topic-container {
     height: 35px;
-    width: 100px;
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-evenly;
     border-radius: 30px;
     font-size: 15px;
     background-color: #b17300;
+    padding: 15px;
 }
 
 .post-info h1 {
