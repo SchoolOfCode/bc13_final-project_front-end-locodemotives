@@ -9,8 +9,21 @@
     border-radius: 5px;
 }
 
+*::-webkit-scrollbar {
+    width: 5px; 
+  }
+  
+*::-webkit-scrollbar-track {
+    background-color: #50505000;
+}
+  
+*::-webkit-scrollbar-thumb {
+    background: #FFA500;
+    border-radius: 10px;
+}
+
 .new-content h1 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     margin: 0;
 }
@@ -32,8 +45,9 @@
     width: 100%;
     align-self: flex-end;
     justify-self: flex-end;
-    text-align: left;
+    text-align: right;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
+    cursor: pointer;
 }

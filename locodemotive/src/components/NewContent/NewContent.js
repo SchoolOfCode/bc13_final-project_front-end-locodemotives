@@ -5,7 +5,7 @@ export default function NewContent({ title, description }) {
     <div className="new-content">
       <h1>{title}</h1>
       <p>{description}</p>
-      <button>Access</button>
+      <button>Access &gt;</button>
     </div>
   );
 }
