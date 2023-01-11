@@ -8,17 +8,19 @@ import Login from './pages/Login';
 import CreateResponse from './pages/CreateResponse';
 import CreatePost from './pages/CreatePost';
 import CreateResource from './pages/CreateResource';
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import PrivateRoute from './PrivateRoute';
 
 function App() {
 
+  const navigate = useNavigate();
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = () => {
     setIsAuthenticated(true);
-    <Navigate to='/home' replace/>
+    navigate('/home')
   };
 
   const logout = () => {
@@ -29,6 +31,7 @@ function App() {
     <div className='App'>
       <Navbar isAuthenticated={isAuthenticated} login={login} logout={logout}/>
         <Routes>
+          <Route path='/' element={<Navigate to='/login'/>}/>
           <Route path='/login' element={<Login login={login} logout={logout}/>} />
           <Route path='/home' element={
             <PrivateRoute 
