@@ -91,7 +91,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Discuss />}
+              component={<Discuss userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
