@@ -44,6 +44,7 @@
     background-color: #F0F0F0;
     padding: 0.75em;
     border-radius: 5px;
+    width: 125%;
 }
 
 .login-form-container button {

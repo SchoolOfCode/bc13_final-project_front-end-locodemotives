@@ -4,6 +4,18 @@
   background-color: rgb(255, 255, 255);
 }
 
+.app-dark {
+  background-color: #161620;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.app-light {
+  background-color: #ffffff;
+  transition: 0.5s;
+  color: #161620;
+}
+
 html::-webkit-scrollbar {
   width: 5px; 
 }

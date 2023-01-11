@@ -4,6 +4,7 @@
     background-color: #D4D4D4;
     width: 300px;
     height: 300px;
+    border-radius: 5px;
 }
 
 .topic-type {
@@ -14,6 +15,8 @@
     font-size: 0.5em;
     font-weight: 300;
     height: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .topic-body {
@@ -21,15 +24,18 @@
     flex-flow: column nowrap;
     align-items: flex-start;
     padding: 10px;
+    height: 90%;
 }
 
 .topic-body h1 {
     font-size: 2em;
     font-weight: 300;
+    margin: 0;
 }
 
 .topic-body p {
     font-size: 1.25em;
     font-weight: 200;
+    margin-bottom: 0;
 }
 
