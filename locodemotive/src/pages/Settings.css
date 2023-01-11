@@ -93,7 +93,7 @@
     border: none;
     width: 200px;
     height: 100px;
-    background-color: #EE3780;
+    background-color: #FFA500;
     font-size: 24px;
     color: #fff;
     cursor: pointer;
@@ -110,10 +110,6 @@
 .settings-navbar .account-btn {
     height: 75px;
     border-bottom-left-radius: 5px;
-}
-
-.settings-navbar button:hover {
-    background-color: #FFA500;
 }
 
 .settings-general-content {

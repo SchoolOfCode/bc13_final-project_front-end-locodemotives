@@ -47,8 +47,8 @@ export default function Settings({ userData }) {
                 {currentTab === "account" && <div className='settings-account-content'>
                     <h1>Account</h1>
                     <div className='account-settings'>
-                        <p>yourname@email.com</p>
-                        <p>************</p>
+                        <p>{userData.email}</p>
+                        <p>{userData.password}</p>
                     </div>
                     <div className='profile-settings'>
                         <img src={userData.image_url} alt="pfp"></img>
