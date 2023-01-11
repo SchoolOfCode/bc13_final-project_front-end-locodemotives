@@ -11,12 +11,31 @@ import CreateResource from './pages/CreateResource';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import PrivateRoute from './PrivateRoute';
+// import env from 'react-dotenv';
 
 function App() {
 
   const navigate = useNavigate();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
+
+  async function getUser(email, password) {
+    let userFetch = await fetch(`${process.env.REACT_APP_URL}/user/?email=${email}`);
+    let userData = await userFetch.json();
+    if (email === userData?.payload?.email && userData.payload.email.length > 0) {
+      if (password === userData.payload.password && userData.payload.password.length > 0) {
+        login();
+        setUser(userData.payload); 
+      } else {
+        setUser({});
+        return "Incorrect Password!"
+      }
+    } else {
+      setUser({});
+      return "Incorrect Email!"
+    }
+  }
 
   const login = () => {
     setIsAuthenticated(true);
@@ -29,10 +48,10 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar isAuthenticated={isAuthenticated} login={login} logout={logout}/>
+      <Navbar isAuthenticated={isAuthenticated} login={getUser} logout={logout}/>
         <Routes>
           <Route path='/' element={<Navigate to='/login'/>}/>
-          <Route path='/login' element={<Login login={login} logout={logout}/>} />
+          <Route path='/login' element={<Login login={getUser} logout={logout}/>} />
           <Route path='/home' element={
             <PrivateRoute 
               redirectTo="/login" 
