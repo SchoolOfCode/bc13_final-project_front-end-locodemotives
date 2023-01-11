@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home({ userData }) {
   const [newContent, setNewContent] = useState([]);
+  const [myPosts, setMyPosts] = useState([]);
 
   async function getNewContent() {
     let newResourcesJSON = await fetch(
@@ -14,8 +15,17 @@ export default function Home({ userData }) {
     setNewContent(newResources.payload);
   }
 
+  async function getMyPosts() {
+    let postsJSON = await fetch(
+      `${process.env.REACT_APP_URL}/posts/author/?author=${userData.name}`
+    );
+    let posts = await postsJSON.json();
+    setMyPosts(posts.payload);
+  }
+
   useEffect(() => {
     getNewContent();
+    getMyPosts();
   }, []);
 
   return (
@@ -24,8 +34,10 @@ export default function Home({ userData }) {
         <div className="my-area">
           <h1>My Learning</h1>
           <select name="My Posts">
-            <option>Post 1</option>
-            <option>Post 2</option>
+            <option>My Posts</option>
+            {myPosts.map((post, index) => {
+              return <option key={index}>{post.title}</option>;
+            })}
           </select>
           <select name="My Resources">
             <option>Resource 1</option>
