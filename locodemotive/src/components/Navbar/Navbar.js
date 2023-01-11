@@ -4,7 +4,7 @@ import Logo from './Logo.png';
 import Bell from './Bell.svg';
 import ProfilePlaceholder from './ProfilePlaceholder.png'
 
-export default function Navbar({ isAuthenticated, login, logout}) {
+export default function Navbar({ isAuthenticated, logout}) {
     return (
         <nav className="nav">
             <Link to="/home" className="site-title"><img src={Logo} alt="Locodemotive Logo"></img></Link>
@@ -12,7 +12,7 @@ export default function Navbar({ isAuthenticated, login, logout}) {
             {isAuthenticated ? (
                 <button onClick={logout}>Log-out</button>
             ) : (
-                <CustomLink to="/login">Login</CustomLink>
+                <></>
             )}
             {isAuthenticated ? (
                 <CustomLink to="/home">Home</CustomLink>
