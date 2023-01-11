@@ -1,5 +1,55 @@
 .settings-account-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+.settings-account-content h1 {
+    font-weight: 500;
+}
+
+/* .settings-general-content {
     display: none;
+} */
+
+.settings-account-content .account-settings {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #CECECE;
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 20px;
+}
+
+.settings-account-content .profile-settings {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    align-items: center;
+    gap: 15px;
+    background-color: #CECECE;
+    border-radius: 5px;
+    height: 250px;
+}
+
+.settings-account-content .profile-settings img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.settings-account-content .profile-settings button {
+    border: none;
+    height: 50px;
+    width: 200px;
+    background-color: #FFA500;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 .settings-page {
@@ -17,19 +67,143 @@
     width: 75%;
     margin-left: 12vw;
     height: 600px;
+    border-radius: 5px;
+}
+
+.settings-menu h1 {
+    margin-bottom: 0;
 }
 
 .settings-navbar ul {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 100%;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #bbbbbb;
+    margin-right: 30px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .settings-navbar button {
     border: none;
-    width: 150px;
+    width: 200px;
     height: 100px;
+    background-color: #EE3780;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.settings-navbar button .active {
+    background-color: #FFA500;
+}
+
+.settings-navbar .general-btn {
+    border-top-left-radius: 5px;
+}
+
+.settings-navbar .account-btn {
+    height: 75px;
+    border-bottom-left-radius: 5px;
+}
+
+.settings-navbar button:hover {
+    background-color: #FFA500;
+}
+
+.settings-general-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+
+.settings-general-content h1 {
+    font-weight: 500;
+}
+
+.settings-general-content .display-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    background-color: #CECECE;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.settings-general-content .display-container h2 {
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.settings-general-content .display-container select {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 150px;
+}
+
+.settings-general-content .notification-container {
+    display: flex;
+    flex-flow: column;
+    background-color: #CECECE;
+    border-radius: 5px;
+    width: 300px;
+    padding: 15px;
+}
+
+.settings-general-content .notification-container h2 {
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-items: flex-start;
+}
+
+.checkbox-set-one label {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.checkbox-set-two label {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-container .checkbox {
+    border: none;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.notification-container .checkbox:hover {
+    background-color: #FFA500;
+}
+
+.settings-page h1#settings {
+    padding-left: 13vw;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    font-weight: 400;
+}
+
+input[type="checkbox"] {
+    appearance: none;
 }
