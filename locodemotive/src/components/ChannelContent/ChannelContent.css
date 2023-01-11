@@ -30,17 +30,17 @@
     color: #fff;
 }
 
-.channel:nth-child(1) {
+#pluralsight-channel {
     background: linear-gradient(180deg, #E34412 0%, #EE3780 100%);
     border-radius: 5px;
 }
 
-.channel:nth-child(2) {
+#sharepoint-channel {
     background: linear-gradient(180deg, #01858A 0%, #189CA1 48.44%, #25C7CA 100%);
     border-radius: 5px;
 }
 
-.channel:nth-child(3) {
+#resonate-channel {
     background: linear-gradient(180deg, #EBB656 0%, #E74F8B 100%);
     border-radius: 5px;
 }
