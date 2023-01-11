@@ -71,7 +71,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Home />}
+              component={<Home userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }

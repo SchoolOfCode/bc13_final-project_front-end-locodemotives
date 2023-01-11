@@ -19,7 +19,9 @@
     font-size: 1em;
     font-weight: 200;
     margin: 0;
+    margin-bottom: 5px;
     height: 50%;
+    overflow-y: scroll;
 }
 
 .new-content button {

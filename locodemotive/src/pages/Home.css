@@ -71,5 +71,7 @@
 .new-content-container {
     display: flex;
     flex-flow: row;
+    justify-content: flex-start;
     gap: 30px;
+    width: 100%;
 }

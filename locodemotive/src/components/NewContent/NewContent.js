@@ -1,12 +1,11 @@
-import './NewContent.css'
+import "./NewContent.css";
 
-export default function NewContent() {
-    return (
-        <div className="new-content">
-            <h1>Title</h1>
-            <p>This is the description about the new 
-            content blablablabla</p>
-            <button>Access</button>
-        </div>
-    )
+export default function NewContent({ title, description }) {
+  return (
+    <div className="new-content">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <button>Access</button>
+    </div>
+  );
 }
