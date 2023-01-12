@@ -51,6 +51,7 @@ export default function Home({ userData }) {
               <NewContent
                 title={newContent[0].title}
                 description={newContent[0].description}
+                link={newContent[0].link}
               />
             ) : (
               <></>
@@ -59,6 +60,7 @@ export default function Home({ userData }) {
               <NewContent
                 title={newContent[1].title}
                 description={newContent[1].description}
+                link={newContent[2].link}
               />
             ) : (
               <></>
@@ -67,6 +69,7 @@ export default function Home({ userData }) {
               <NewContent
                 title={newContent[2].title}
                 description={newContent[2].description}
+                link={newContent[2].link}
               />
             ) : (
               <></>
