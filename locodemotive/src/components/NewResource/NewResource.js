@@ -79,7 +79,7 @@ export default function NewResource({ userData }) {
           <option>General</option>
           <option>DevOps</option>
           <option>Support Services</option>
-          <option>Digital Delivery</option>
+          <option>Digital Development</option>
           <option>Business Analysis</option>
         </select>
         <select

@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 export default function Learn() {
   const [resources, setResources] = useState([]);
 
-  const [type, setType] = useState("");
+  const [type, setType] = useState("null");
+  const [topic, setTopic] = useState("null");
 
   const getAllResources = async () => {
     const response = await fetch(`${process.env.REACT_APP_URL}/resources`);
@@ -14,33 +15,47 @@ export default function Learn() {
     setResources(data.payload);
   };
 
-  const getResourceByType = async () => {
-    const response = await fetch(
-      `${process.env.REACT_APP_URL}/resources/search/?topic=null&type=${type}`
-    );
-    const data = await response.json();
-    setResources(data.payload);
-    console.log(data);
+  const getResourceByTypeAndTopic = async () => {
+    if (type === "null" && topic === "null") {
+      await getAllResources();
+    } else {
+      const response = await fetch(
+        `${process.env.REACT_APP_URL}/resources/search/?topic=${topic}&type=${type}`
+      );
+      const data = await response.json();
+      setResources(data.payload);
+    }
   };
 
-  const handleClick = async () => {
-    getResourceByType();
-  };
+  // const handleClick = async (e) => {
+  //   setType(e.target.value);
+  //   console.log(type);
+  //   await getResourceByType();
+  // };
 
   useEffect(() => {
     getAllResources();
   }, []);
+
+  useEffect(() => {
+    getResourceByTypeAndTopic();
+  }, [topic, type]);
 
   return (
     <div className="learn-content">
       <div className="topic-list-container">
         <h1>Topic</h1>
         <div className="topics">
-          <h2>General</h2>
-          <h2>DevOps</h2>
-          <h2>Support Services</h2>
-          <h2>Digtial Delivery</h2>
-          <h2>Business Analysis</h2>
+          <h2 onClick={() => setTopic("null")}>All</h2>
+          <h2 onClick={() => setTopic("General")}>General</h2>
+          <h2 onClick={() => setTopic("DevOps")}>DevOps</h2>
+          <h2 onClick={() => setTopic("Support Services")}>Support Services</h2>
+          <h2 onClick={() => setTopic("Digital Development")}>
+            Digital Development
+          </h2>
+          <h2 onClick={() => setTopic("Business Analysis")}>
+            Business Analysis
+          </h2>
         </div>
       </div>
       <div className="explore-container">
@@ -53,19 +68,12 @@ export default function Learn() {
             <select
               name="Type"
               onChange={(e) => {
-                if (e.target.value !== "Any") {
-                  setType(e.target.value);
-                  handleClick();
-                } else {
-                  getAllResources();
-                }
-                console.log(type);
+                setType(e.target.value);
               }}
             >
-              <option selected disabled>
-                Sort By Type:
+              <option selected value="null">
+                All
               </option>
-              <option>Any</option>
               <option>Book</option>
               <option>Website</option>
               <option>Course</option>
