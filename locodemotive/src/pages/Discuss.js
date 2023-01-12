@@ -7,7 +7,13 @@ export default function Discuss() {
   let [posts, setPosts] = useState([]);
   let [searchTitle, setSearchTitle] = useState("null");
   let [searchTopic, setSearchTopic] = useState("null");
-  let topics = ["Support Services", "DevOps", "Digital Development", "Buisness Analysis", "General"];
+  let topics = [
+    "Support Services",
+    "DevOps",
+    "Digital Development",
+    "Buisness Analysis",
+    "General",
+  ];
 
   async function getAllPosts() {
     let allPostsJSON = await fetch(`${process.env.REACT_APP_URL}/posts`);
