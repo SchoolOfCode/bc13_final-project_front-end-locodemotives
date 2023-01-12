@@ -9,15 +9,19 @@ import CreateResponse from "./pages/CreateResponse";
 import CreatePost from "./pages/CreatePost";
 import CreateResource from "./pages/CreateResource";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PrivateRoute from "./PrivateRoute";
+import { ThemeContext } from "./hooks/ThemeContext";
 // import env from 'react-dotenv';
 
 function App() {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
+  const [themeSetting, setThemeSetting] = useState(false);
 
   
   async function getUserStatus(foundUser) {
@@ -29,10 +33,22 @@ function App() {
     }
   }
 
+  async function getUserTheme(foundTheme) {
+    if (foundTheme === true) {
+      theme.dispatch({ type: 'LIGHTMODE '})
+    } else if (foundTheme === false) {
+      theme.dispatch({ type: 'DARKMODE' })
+    }
+  }
+
   useEffect(() => {
     const loggedInUser = localStorage.getItem('user');
     const foundUser = JSON.parse(loggedInUser)
     getUserStatus(foundUser)
+
+    const userTheme = localStorage.getItem('theme');
+    const foundTheme = JSON.parse(userTheme)
+    getUserTheme(foundTheme);
   },[])
 
   async function getUser(email, password) {
@@ -72,7 +88,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
       <Navbar
         isAuthenticated={isAuthenticated}
         logout={logout}

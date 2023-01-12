@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ThemeButton from '../components/ThemeButton/ThemeButton'
 import './Settings.css'
 
 export default function Settings({ userData }) {
@@ -19,12 +20,7 @@ export default function Settings({ userData }) {
                     <h1>General</h1>
                     <div className='display-container'>
                         <h2>Display</h2>
-                        <div className='theme-selector'>
-                            <label>Theme: </label><select>
-                                <option>Light</option>
-                                <option>Dark</option>
-                            </select>
-                        </div>
+                        <ThemeButton/>
                     </div>
                     <div className='notification-container'>
                         <h2>Notifications</h2>
