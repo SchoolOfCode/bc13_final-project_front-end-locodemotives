@@ -16,6 +16,10 @@
     width: 80%;
 }
 
+.post-container:last-child {
+    margin-bottom: 4vh;
+}
+
 .post-info {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
