@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./NewResponse.css";
 
 export default function NewResponse({ author_id, post_id }) {
+  const navigate = useNavigate();
   const [body, setBody] = useState("");
 
   async function submitNewResponse() {
@@ -19,6 +21,7 @@ export default function NewResponse({ author_id, post_id }) {
       }
     );
     await newResponseJSON.json();
+    navigate("/discuss");
   }
 
   return (
