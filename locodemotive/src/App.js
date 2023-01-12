@@ -19,21 +19,22 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
 
-  
   async function getUserStatus(foundUser) {
-    let checkUser = await fetch(`${process.env.REACT_APP_URL}/user/?id=${foundUser}`)
+    let checkUser = await fetch(
+      `${process.env.REACT_APP_URL}/user/?id=${foundUser}`
+    );
     let checkUserData = await checkUser.json();
     if (foundUser === checkUserData.payload.user_id) {
-      login()
-      setUser(checkUserData.payload)
+      login();
+      setUser(checkUserData.payload);
     }
   }
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem('user');
-    const foundUser = JSON.parse(loggedInUser)
-    getUserStatus(foundUser)
-  },[])
+    const loggedInUser = localStorage.getItem("user");
+    const foundUser = JSON.parse(loggedInUser);
+    getUserStatus(foundUser);
+  }, []);
 
   async function getUser(email, password) {
     let userFetch = await fetch(
@@ -50,7 +51,7 @@ function App() {
       ) {
         login();
         setUser(userData.payload);
-        localStorage.setItem('user', userData.payload.user_id)
+        localStorage.setItem("user", userData.payload.user_id);
       } else {
         setUser({});
         return "Incorrect Password!";
@@ -68,7 +69,7 @@ function App() {
 
   const logout = () => {
     setIsAuthenticated(false);
-    localStorage.clear()
+    localStorage.clear();
   };
 
   return (

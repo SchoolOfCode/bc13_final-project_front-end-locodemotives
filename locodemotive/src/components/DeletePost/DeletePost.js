@@ -1,4 +1,8 @@
-export default function DeletePost({ post_id, replies }) {
+// import { useNavigate } from "react-router-dom";
+
+export default function DeletePost({ post_id, replies, forceUpdate }) {
+  // const navigate = useNavigate();
+
   async function handleClick() {
     // delete responses to the post
     // must be done first so no foreign key issues
@@ -21,8 +25,14 @@ export default function DeletePost({ post_id, replies }) {
       }
     );
     await deletedPostJSON.json();
-    window.location.reload(false);
+    // window.location.reload(false);
+    // navigate("/discuss");
+    forceUpdate();
   }
 
-  return <button onClick={handleClick}>Delete Post</button>;
+  return (
+    <button onClick={handleClick} className="deleteButton">
+      Delete Post
+    </button>
+  );
 }
