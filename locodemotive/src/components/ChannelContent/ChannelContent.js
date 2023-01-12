@@ -1,6 +1,6 @@
 import Pluralsight from "./Images/Pluralsight.png";
 import Sharepoint from "./Images/Sharepoint.png";
-import Resonate from "./Images/Resonate.png";
+import Resonate from "./Images/ResonateWhite.png";
 import "./ChannelContent.css";
 
 export default function ChannelContent() {
