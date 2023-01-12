@@ -21,7 +21,6 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
-  const [themeSetting, setThemeSetting] = useState(false);
 
   
   async function getUserStatus(foundUser) {
@@ -33,22 +32,10 @@ function App() {
     }
   }
 
-  async function getUserTheme(foundTheme) {
-    if (foundTheme === true) {
-      theme.dispatch({ type: 'LIGHTMODE '})
-    } else if (foundTheme === false) {
-      theme.dispatch({ type: 'DARKMODE' })
-    }
-  }
-
   useEffect(() => {
     const loggedInUser = localStorage.getItem('user');
     const foundUser = JSON.parse(loggedInUser)
     getUserStatus(foundUser)
-
-    const userTheme = localStorage.getItem('theme');
-    const foundTheme = JSON.parse(userTheme)
-    getUserTheme(foundTheme);
   },[])
 
   async function getUser(email, password) {
