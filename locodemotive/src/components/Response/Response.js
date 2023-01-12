@@ -51,10 +51,8 @@ function CustomLink({ to, children, postData }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
   return (
-    <button className={isActive ? "active" : ""}>
-      <Link to={to} state={{ postData: postData }}>
-        {children}
-      </Link>
-    </button>
+    <Link to={to} state={{ postData: postData }}>
+      <button className={isActive ? "active" : ""}>{children}</button>
+    </Link>
   );
 }
