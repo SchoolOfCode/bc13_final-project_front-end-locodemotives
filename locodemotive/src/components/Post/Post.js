@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Response from "../Response/Response";
+import DeletePost from "../DeletePost/DeletePost";
 import "./Post.css";
 
 export default function Post({ postData, repliesStart }) {
@@ -37,6 +38,11 @@ export default function Post({ postData, repliesStart }) {
         </div>
         <div className="post-body">
           <p>{postData.body}</p>
+          {postData.author.toString() === localStorage.user ? (
+            <DeletePost post_id={postData.post_id} replies={replies} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <Response replies={replies} postData={postData} />
