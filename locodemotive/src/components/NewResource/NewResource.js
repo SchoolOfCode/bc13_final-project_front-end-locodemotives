@@ -1,5 +1,6 @@
 import "./NewResource.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NewResource({ userData }) {
   const [newResourceInfo, setResourceInfo] = useState({
@@ -11,6 +12,8 @@ export default function NewResource({ userData }) {
     author: "",
     date_created: "",
   });
+  
+  const navigate = useNavigate();
 
   const handleClickSubmit = async () => {
     let date = new Date();
@@ -31,6 +34,7 @@ export default function NewResource({ userData }) {
     } catch (error) {
       console.log(error);
     }
+    navigate('/learn')
   };
 
   return (

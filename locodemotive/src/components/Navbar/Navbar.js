@@ -1,11 +1,21 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useState } from 'react'
 import "./Navbar.css";
 import Logo from "./Logo.png";
 import Bell from "./Bell.svg";
+import NotificationTab from '../NotificationTab/NotificationTab';
 // import ProfilePlaceholder from "./ProfilePlaceholder.png";
 
 export default function Navbar({ isAuthenticated, logout, userData }) {
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleNotifications() {
+    setIsOpen(!isOpen)
+  }
+
   return (
+    <>
     <nav className="nav">
       <Link to="/home" className="site-title">
         <img src={Logo} alt="Locodemotive Logo"></img>
@@ -20,11 +30,11 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
           <></>
         )}
         {isAuthenticated ? (
-          <li>
-            <button id="bell">
-              <img src={Bell} alt="Notification Bell"></img>
-            </button>
-          </li>
+            <li>
+              <button id="bell" onClick={handleNotifications}>
+                <img src={Bell} alt="Notification Bell"></img>
+              </button>
+            </li>
         ) : (
           <></>
         )}
@@ -39,6 +49,8 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
         )}
       </ul>
     </nav>
+    {isOpen && <NotificationTab/>}
+    </>
   );
 }
 
