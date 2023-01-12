@@ -131,7 +131,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<CreateResource />}
+              component={<CreateResource userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }

@@ -1,25 +1,105 @@
-import './NewResource.css'
+import "./NewResource.css";
+import { useState } from "react";
 
-export default function NewResource() {
-    return (
+export default function NewResource({ userData }) {
+  const [newResourceInfo, setResourceInfo] = useState({
+    title: "",
+    description: "",
+    link: "",
+    topic: "",
+    type: "",
+    author: "",
+    date_created: "",
+  });
+
+  const handleClickSubmit = async () => {
+    let date = new Date();
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_URL}/resources`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...newResourceInfo,
+          ...{ author: userData.user_id, date_created: date },
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
     <div className="new-resource">
-        <h1>New Resource</h1>
-        <div className='new-resource-submission'>
-            <input type="text" placeholder="Title"></input>
-            <textarea type="text" placeholder="Resource Description"></textarea>
-            <input type="text" placeholder="Resource Link"></input>
-            <select placeholder="Topic">
-                <option>Topic 1</option>
-                <option>Topic 2</option>
-                <option>Topic 3</option>
-            </select>
-            <select placeholder="Type">
-                <option>Type 1</option>
-                <option>Type 2</option>
-                <option>Type 3</option>
-            </select>
-            <button type="submit">Submit</button>
-        </div>
+      <h1>New Resource</h1>
+      <div className="new-resource-submission">
+        <input
+          type="text"
+          placeholder="Title"
+          required
+          onChange={(e) => {
+            newResourceInfo.title = e.target.value;
+            setResourceInfo(newResourceInfo);
+          }}
+        ></input>
+        <textarea
+          type="text"
+          placeholder="Description"
+          required
+          onChange={(e) => {
+            newResourceInfo.description = e.target.value;
+            setResourceInfo(newResourceInfo);
+          }}
+        ></textarea>
+        <input
+          type="text"
+          placeholder="Link"
+          required
+          onChange={(e) => {
+            newResourceInfo.link = e.target.value;
+            setResourceInfo(newResourceInfo);
+          }}
+        ></input>
+        <select
+          placeholder="Topic"
+          name="Topic"
+          required
+          onChange={(e) => {
+            newResourceInfo.topic = e.target.value;
+            setResourceInfo(newResourceInfo);
+          }}
+        >
+          <option selected disabled>
+            Select Topic:
+          </option>
+          <option>DevOps</option>
+          <option>Support Services</option>
+          <option>Digital Delivery</option>
+          <option>Business Analysis</option>
+        </select>
+        <select
+          placeholder="Type"
+          required
+          onChange={(e) => {
+            newResourceInfo.type = e.target.value;
+            setResourceInfo(newResourceInfo);
+          }}
+        >
+          <option selected disabled>
+            Select Type:
+          </option>
+          <option>Book</option>
+          <option>Website</option>
+          <option>Course</option>
+          <option>Article</option>
+          <option>Video</option>
+        </select>
+        <button onClick={handleClickSubmit}>Submit</button>
+      </div>
     </div>
-    )
+  );
 }
