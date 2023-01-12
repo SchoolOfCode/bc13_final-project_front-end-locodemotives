@@ -100,7 +100,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Learn />}
+              component={<Learn userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
