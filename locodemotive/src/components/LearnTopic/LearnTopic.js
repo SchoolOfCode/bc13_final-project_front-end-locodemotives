@@ -7,8 +7,11 @@ export default function LearnTopic() {
                 <h1>Type</h1>
             </div>
             <div className="topic-body">
-                <h1>Title</h1>
-                <p>Description</p>
+                <div className='topic-body-info'>
+                    <h1>Title</h1>
+                    <p>Description</p>
+                </div>
+                <button>Access &gt;</button>
             </div>
         </div>
     )
