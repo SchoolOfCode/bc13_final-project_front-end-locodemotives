@@ -76,6 +76,7 @@ export default function NewResource({ userData }) {
           <option selected disabled>
             Select Topic:
           </option>
+          <option>General</option>
           <option>DevOps</option>
           <option>Support Services</option>
           <option>Digital Delivery</option>
