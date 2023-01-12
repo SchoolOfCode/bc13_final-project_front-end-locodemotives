@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Response from "../Response/Response";
 import "./Post.css";
 
-export default function Post({ postData, userData }) {
+export default function Post({ postData }) {
   const [authorName, setAuthorName] = useState("");
   const [replies, setReplies] = useState([]);
 
@@ -39,7 +39,7 @@ export default function Post({ postData, userData }) {
           <p>{postData.body}</p>
         </div>
       </div>
-      <Response userData={userData} replies={replies} />
+      <Response replies={replies} postData={postData} />
     </div>
   );
 }

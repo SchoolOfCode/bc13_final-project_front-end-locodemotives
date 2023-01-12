@@ -91,7 +91,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Discuss userData={user} />}
+              component={<Discuss />}
               isAuthenticated={isAuthenticated}
             />
           }
@@ -101,7 +101,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Settings userData={user}/>}
+              component={<Settings userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
@@ -111,7 +111,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<CreateResponse />}
+              component={<CreateResponse userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }

@@ -2,7 +2,7 @@ import "./Response.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Response({ userData, replies }) {
+export default function Response({ replies, postData }) {
   const [replyAuthors, setReplyAuthors] = useState([]);
 
   async function getAuthorName(id) {
@@ -39,18 +39,20 @@ export default function Response({ userData, replies }) {
     <div className="response">
       <div className="response-info">
         {showResponse}
-        <CustomLink to="/new_response">New Response</CustomLink>
+        <CustomLink to="/new_response" postData={postData}>
+          New Response
+        </CustomLink>
       </div>
     </div>
   );
 }
 
-function CustomLink({ to, children, ...props }) {
+function CustomLink({ to, children, postData }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
   return (
     <button className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
+      <Link to={to} state={{ postData: postData }}>
         {children}
       </Link>
     </button>
