@@ -24,8 +24,8 @@ export default function Response({ userData, replies }) {
   const showResponse = replies.map((reply, index) => {
     return (
       <div className="response-info-container">
-        <h1>{replyAuthors[index]}</h1>
-        <h2>{reply.date_created.slice(0, 10)}</h2>
+        <h2>{replyAuthors[index]}</h2>
+        <h3>{reply.date_created.slice(0, 10)}</h3>
         <div className="response-body">
           <p>{reply.body}</p>
         </div>
