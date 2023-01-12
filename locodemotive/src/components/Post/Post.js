@@ -3,7 +3,7 @@ import Response from "../Response/Response";
 import DeletePost from "../DeletePost/DeletePost";
 import "./Post.css";
 
-export default function Post({ postData, repliesStart, forceUpdate }) {
+export default function Post({ postData, repliesStart }) {
   const [authorName, setAuthorName] = useState("");
   const [replies, setReplies] = useState(repliesStart);
 
@@ -39,11 +39,7 @@ export default function Post({ postData, repliesStart, forceUpdate }) {
         <div className="post-body">
           <p>{postData.body}</p>
           {postData.author.toString() === localStorage.user ? (
-            <DeletePost
-              post_id={postData.post_id}
-              replies={replies}
-              forceUpdate={forceUpdate}
-            />
+            <DeletePost post_id={postData.post_id} replies={replies} />
           ) : (
             <></>
           )}

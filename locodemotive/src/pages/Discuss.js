@@ -3,16 +3,7 @@ import "./Discuss.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-function useForceUpdate() {
-  const [value, setValue] = useState(0);
-  return () => {
-    setValue(value + 1);
-  };
-}
-
 export default function Discuss() {
-  const forceUpdate = useForceUpdate();
-
   let [posts, setPosts] = useState([]);
   let [searchTitle, setSearchTitle] = useState("null");
   let [searchTopic, setSearchTopic] = useState("null");
@@ -79,14 +70,7 @@ export default function Discuss() {
       </div>
       <div className="post-container">
         {posts.map((postData, index) => {
-          return (
-            <Post
-              key={index}
-              postData={postData}
-              repliesStart={[]}
-              forceUpdate={forceUpdate}
-            />
-          );
+          return <Post key={index} postData={postData} repliesStart={[]} />;
         })}
       </div>
     </div>
