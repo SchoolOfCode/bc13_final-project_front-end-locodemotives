@@ -7,21 +7,23 @@ export default function NewResponse({ author_id, post_id }) {
   const [body, setBody] = useState("");
 
   async function submitNewResponse() {
-    let newResponseJSON = await fetch(
-      `${process.env.REACT_APP_URL}/posts/reply`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          post: post_id,
-          author: author_id,
-          body: body,
-          date_created: new Date(),
-        }),
-      }
-    );
-    await newResponseJSON.json();
-    navigate("/discuss");
+    if (body !== "") {
+      let newResponseJSON = await fetch(
+        `${process.env.REACT_APP_URL}/posts/reply`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            post: post_id,
+            author: author_id,
+            body: body,
+            date_created: new Date(),
+          }),
+        }
+      );
+      await newResponseJSON.json();
+      navigate("/discuss");
+    }
   }
 
   return (
