@@ -9,7 +9,7 @@ import CreateResponse from "./pages/CreateResponse";
 import CreatePost from "./pages/CreatePost";
 import CreateResource from "./pages/CreateResource";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PrivateRoute from "./PrivateRoute";
 // import env from 'react-dotenv';
 
@@ -18,6 +18,22 @@ function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
+
+  
+  async function getUserStatus(foundUser) {
+    let checkUser = await fetch(`${process.env.REACT_APP_URL}/user/?id=${foundUser}`)
+    let checkUserData = await checkUser.json();
+    if (foundUser === checkUserData.payload.user_id) {
+      login()
+      setUser(checkUserData.payload)
+    }
+  }
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user');
+    const foundUser = JSON.parse(loggedInUser)
+    getUserStatus(foundUser)
+  },[])
 
   async function getUser(email, password) {
     let userFetch = await fetch(
@@ -34,6 +50,7 @@ function App() {
       ) {
         login();
         setUser(userData.payload);
+        localStorage.setItem('user', userData.payload.user_id)
       } else {
         setUser({});
         return "Incorrect Password!";
@@ -51,6 +68,7 @@ function App() {
 
   const logout = () => {
     setIsAuthenticated(false);
+    localStorage.clear()
   };
 
   return (
