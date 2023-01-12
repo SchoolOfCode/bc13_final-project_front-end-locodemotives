@@ -81,7 +81,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Learn />}
+              component={<Learn userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
@@ -101,7 +101,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<Settings userData={user}/>}
+              component={<Settings userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }

@@ -1,8 +1,36 @@
 import "./Learn.css";
 import LearnTopic from "../components/LearnTopic/LearnTopic";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Learn() {
+  const [resources, setResources] = useState([]);
+
+  const [type, setType] = useState("");
+
+  const getAllResources = async () => {
+    const response = await fetch(`${process.env.REACT_APP_URL}/resources`);
+    const data = await response.json();
+    setResources(data.payload);
+  };
+
+  const getResourceByType = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_URL}/resources/search/?topic=null&type=${type}`
+    );
+    const data = await response.json();
+    setResources(data.payload);
+    console.log(data);
+  };
+
+  const handleClick = async () => {
+    getResourceByType();
+  };
+
+  useEffect(() => {
+    getAllResources();
+  }, []);
+
   return (
     <div className="learn-content">
       <div className="topic-list-container">
@@ -22,9 +50,27 @@ export default function Learn() {
             <CustomLink to="/new_resource">Add Resource</CustomLink>
           </div>
           <div className="explore-header-selectors">
-            <select name="Type">
-              <option>Placeholder</option>
-              <option>Placeholder</option>
+            <select
+              name="Type"
+              onChange={(e) => {
+                if (e.target.value !== "Any") {
+                  setType(e.target.value);
+                  handleClick();
+                } else {
+                  getAllResources();
+                }
+                console.log(type);
+              }}
+            >
+              <option selected disabled>
+                Sort By Type:
+              </option>
+              <option>Any</option>
+              <option>Book</option>
+              <option>Website</option>
+              <option>Course</option>
+              <option>Article</option>
+              <option>Video</option>
             </select>
             <div className="page-buttons">
               <button>Back</button>
@@ -32,12 +78,9 @@ export default function Learn() {
             </div>
           </div>
           <div className="learn-topic-container">
-            <LearnTopic />
-            <LearnTopic />
-            <LearnTopic />
-            <LearnTopic />
-            <LearnTopic />
-            <LearnTopic />
+            {resources.map((resourceData, index) => {
+              return <LearnTopic key={index} resourceData={resourceData} />;
+            })}
           </div>
         </div>
       </div>
