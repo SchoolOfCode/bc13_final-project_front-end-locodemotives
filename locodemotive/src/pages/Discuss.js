@@ -7,19 +7,12 @@ export default function Discuss({ userData }) {
   let [posts, setPosts] = useState([]);
   let [searchTitle, setSearchTitle] = useState("null");
   let [searchTopic, setSearchTopic] = useState("null");
-  let [topics, setTopics] = useState([]);
+  let topics = ["PostgreSQL", "CSS"];
 
   async function getAllPosts() {
     let allPostsJSON = await fetch(`${process.env.REACT_APP_URL}/posts`);
     let allPosts = await allPostsJSON.json();
     setPosts(allPosts.payload);
-    await findTopics();
-  }
-
-  async function findTopics() {
-    for (let i = 0; i < posts.length; i++) {
-      setTopics([...topics, posts[i].topic]);
-    }
   }
 
   async function searchForPosts() {
@@ -56,8 +49,6 @@ export default function Discuss({ userData }) {
           }}
         >
           <option value={"null"}>Select Topic</option>
-          {/* <option value={"PostgreSQL"}>PostgreSQL</option>
-          <option value={"CSS"}>CSS</option> */}
           {topics.map((topic, index) => {
             return (
               <option value={topic} key={index}>

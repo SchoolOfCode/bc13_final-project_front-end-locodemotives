@@ -5,19 +5,21 @@ import { useEffect, useState } from "react";
 export default function Response({ userData, replies }) {
   const [replyAuthors, setReplyAuthors] = useState([]);
 
-  useEffect(() => {
-    async function getAuthorName(id) {
-      let nameJSON = await fetch(`${process.env.REACT_APP_URL}/user/?id=${id}`);
-      let name = await nameJSON.json();
-      return name.payload.name;
-    }
+  async function getAuthorName(id) {
+    let nameJSON = await fetch(`${process.env.REACT_APP_URL}/user/?id=${id}`);
+    let name = await nameJSON.json();
+    return name.payload.name;
+  }
 
-    async function getReplyAuthors() {
-      for (let i = 0; i < replies.length; i++) {
-        let name = await getAuthorName(replies[i].author);
-        setReplyAuthors((replyAuthors) => [...replyAuthors, name]);
-      }
+  async function getReplyAuthors() {
+    setReplyAuthors([]);
+    for (let i = 0; i < replies.length; i++) {
+      let name = await getAuthorName(replies[i].author);
+      setReplyAuthors((replyAuthors) => [...replyAuthors, name]);
     }
+  }
+
+  useEffect(() => {
     getReplyAuthors();
   }, [replies]);
 

@@ -22,7 +22,7 @@ export default function Post({ postData, userData }) {
   useEffect(() => {
     getAuthorName(postData.author);
     getReplies(postData.post_id);
-  }, []);
+  }, [postData]);
 
   return (
     <div className="post-container">
