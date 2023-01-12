@@ -70,7 +70,7 @@ export default function Discuss() {
       </div>
       <div className="post-container">
         {posts.map((postData, index) => {
-          return <Post key={index} postData={postData} />;
+          return <Post key={index} postData={postData} repliesStart={[]} />;
         })}
       </div>
     </div>

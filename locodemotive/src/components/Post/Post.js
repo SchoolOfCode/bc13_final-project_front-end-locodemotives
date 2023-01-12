@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Response from "../Response/Response";
 import "./Post.css";
 
-export default function Post({ postData }) {
+export default function Post({ postData, repliesStart }) {
   const [authorName, setAuthorName] = useState("");
-  const [replies, setReplies] = useState([]);
+  const [replies, setReplies] = useState(repliesStart);
 
   async function getAuthorName(id) {
     let nameJSON = await fetch(`${process.env.REACT_APP_URL}/user/?id=${id}`);
