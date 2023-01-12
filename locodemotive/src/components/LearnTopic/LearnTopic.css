@@ -32,12 +32,17 @@
     font-size: 1.8em;
     font-weight: 400;
     margin: 0;
+    margin-bottom:5px;
 }
 
 .topic-body p {
     font-size: 1.1em;
     font-weight: 200;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    overflow-y: scroll;
+    margin: 0;
+    height: 50%;
+    
 }
 
 .topic-body button {

@@ -31,9 +31,8 @@
     cursor: pointer;
 }
 
-.navigation-bar button:first-of-type {
-    margin-right: 20vw;
-    /* margin-left: -1vw; */
+.navigation-bar button:last-child {
+    margin-left: 20vw;
 }
 
 .navigation-bar select {

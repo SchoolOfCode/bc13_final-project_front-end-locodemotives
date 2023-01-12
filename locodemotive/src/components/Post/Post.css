@@ -11,7 +11,6 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    /* row-gap: 2vw; */
     color: #fff;
     width: 80%;
 }
@@ -30,12 +29,11 @@
     gap: 4vw;
     background-color: #FFA500;
     padding: 0px 3vw 0px 3vw;
-    /* margin-bottom: -40px; */
     width: 100%;
 }
 
 .post-info .topic-container {
-    height: 35px;
+    height: auto;
     width: auto;
     display: flex;
     align-items: center;
@@ -43,12 +41,14 @@
     border-radius: 30px;
     font-size: 15px;
     background-color: #b17300;
-    padding: 15px;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
 }
 
-/* .post-info h1 {
-    margin-right: 15vw;
-} */
+h3 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
 
 .post-body {
     background-color: #D9D9D9;
@@ -59,7 +59,30 @@
     color: #000;
     padding-left: 25px;
     padding-right: 25px;
-    /* padding-bottom: 25px; */
-    /* height: 200px; */
+    padding-bottom: 10px;
     font-size: 1.5em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+p {
+    width: 100%;
+    text-align: left;
+}
+
+.deleteButton {
+    border: none;
+    background-color: #EE3780;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #EE3780;
 }
