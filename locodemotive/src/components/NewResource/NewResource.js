@@ -1,23 +1,30 @@
 import "./NewResource.css";
 import { useState } from "react";
 
-export default function NewResource() {
+export default function NewResource({ userData }) {
   const [newResourceInfo, setResourceInfo] = useState({
     title: "",
     description: "",
     link: "",
     topic: "",
     type: "",
+    author: "",
+    date_created: "",
   });
 
   const handleClickSubmit = async () => {
+    let date = new Date();
+
     try {
       const response = await fetch(`${process.env.REACT_APP_URL}/resources`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newResourceInfo),
+        body: JSON.stringify({
+          ...newResourceInfo,
+          ...{ author: userData.user_id, date_created: date },
+        }),
       });
       const data = await response.json();
       console.log(data);
@@ -41,7 +48,7 @@ export default function NewResource() {
         ></input>
         <textarea
           type="text"
-          placeholder="Resource Description"
+          placeholder="Description"
           required
           onChange={(e) => {
             newResourceInfo.description = e.target.value;
@@ -50,7 +57,7 @@ export default function NewResource() {
         ></textarea>
         <input
           type="text"
-          placeholder="Resource Link"
+          placeholder="Link"
           required
           onChange={(e) => {
             newResourceInfo.link = e.target.value;
@@ -66,6 +73,9 @@ export default function NewResource() {
             setResourceInfo(newResourceInfo);
           }}
         >
+          <option selected disabled>
+            Select Topic:
+          </option>
           <option>DevOps</option>
           <option>Support Services</option>
           <option>Digital Delivery</option>
@@ -79,9 +89,14 @@ export default function NewResource() {
             setResourceInfo(newResourceInfo);
           }}
         >
-          <option>Type 1</option>
-          <option>Type 2</option>
-          <option>Type 3</option>
+          <option selected disabled>
+            Select Type:
+          </option>
+          <option>Book</option>
+          <option>Website</option>
+          <option>Course</option>
+          <option>Article</option>
+          <option>Video</option>
         </select>
         <button onClick={handleClickSubmit}>Submit</button>
       </div>
