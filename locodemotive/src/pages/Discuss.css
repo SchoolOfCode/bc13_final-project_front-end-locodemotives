@@ -31,8 +31,8 @@
 }
 
 .navigation-bar button:first-of-type {
-    margin-right: 22vw;
-    margin-left: -1vw;
+    margin-right: 20vw;
+    /* margin-left: -1vw; */
 }
 
 .navigation-bar select {
