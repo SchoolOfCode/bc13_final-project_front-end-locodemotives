@@ -11,7 +11,6 @@
   border-radius: 10px;
 }
 
-
 .topic-container {
     display: flex;
     flex-flow: column nowrap;
@@ -20,6 +19,7 @@
     width: 300px;
     background-color: #D9D9D9;
     border-radius: 5px;
+    animation: fadeIn 1s;
 }
 
 .topic-container .topic-type {
@@ -76,4 +76,8 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+}
+
+.topic-body a {
+    width: 100%;
 }
