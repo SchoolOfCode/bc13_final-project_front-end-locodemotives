@@ -14,6 +14,7 @@ export default function Post({ postData, repliesStart }) {
     setAuthorName(name.payload.name);
     setAuthorImage(name.payload.image_url);
   }
+
   async function getReplies(post_id) {
     let responsesJSON = await fetch(
       `${process.env.REACT_APP_URL}/posts/replies/?post=${post_id}`

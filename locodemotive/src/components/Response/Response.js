@@ -29,34 +29,32 @@ export default function Response({ replies, postData }) {
     getReplyAuthors();
   }, [replies]);
 
-  const showResponse = replies.map((reply, index) => {
-    return (
-      <div className="response-info-container">
-        <div className="response-author">
-          <span>
-            <img
-              id="pfp"
-              src={replyAuthorsImages[index]}
-              alt="ProfileImage"
-            ></img>
-          </span>
-          <h3>{replyAuthors[index]}</h3>
-        </div>
-        <div className="response-body-box">
-          <div className="response-date">
-            <h3>{reply.date_created.slice(0, 10)}</h3>
-          </div>
-          <div className="response-body">
-            <p>{reply.body}</p>
-          </div>
-        </div>
-      </div>
-    );
-  });
-
   return (
     <div className="responses">
-      {replies[0] ? showResponse : <></>}
+      {replies.map((reply, index) => {
+        return (
+          <div className="response-info-container">
+            <div className="response-author">
+              <span>
+                <img
+                  id="pfp"
+                  src={replyAuthorsImages[index]}
+                  alt="ProfileImage"
+                ></img>
+              </span>
+              <h3>{replyAuthors[index]}</h3>
+            </div>
+            <div className="response-body-box">
+              <div className="response-date">
+                <h3>{reply.date_created.slice(0, 10)}</h3>
+              </div>
+              <div className="response-body">
+                <p>{reply.body}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
       <div className="new-response-button">
         <CustomLink to="/new_response" postData={postData}>
           New Response
