@@ -5,6 +5,7 @@
     justify-content: flex-start;
     width: 80%;
     margin-bottom: 2vh;
+    animation: fadeIn 1s;
 }
 
 .post-container:first-child {

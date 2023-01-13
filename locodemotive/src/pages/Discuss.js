@@ -54,7 +54,7 @@ export default function Discuss() {
             setSearchTopic(e.target.value);
           }}
         >
-          <option value={"null"}>Select Topic</option>
+          <option value={"null"}>All</option>
           {topics.map((topic, index) => {
             return (
               <option value={topic} key={index}>
