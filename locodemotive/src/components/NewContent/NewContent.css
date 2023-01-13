@@ -9,15 +9,28 @@
     border-radius: 5px;
 }
 
-*::-webkit-scrollbar {
+.app-dark *::-webkit-scrollbar {
     width: 5px; 
   }
   
-*::-webkit-scrollbar-track {
+.app-dark ::-webkit-scrollbar-track {
     background-color: #50505000;
 }
   
-*::-webkit-scrollbar-thumb {
+.app-dark ::-webkit-scrollbar-thumb {
+    background: #E5619D;
+    border-radius: 10px;
+}
+
+.app-light *::-webkit-scrollbar {
+    width: 5px; 
+  }
+  
+.app-light ::-webkit-scrollbar-track {
+    background-color: #50505000;
+}
+  
+.app-light ::-webkit-scrollbar-thumb {
     background: #FFA500;
     border-radius: 10px;
 }
@@ -50,4 +63,28 @@
     padding-right: 15px;
     border-radius: 5px;
     cursor: pointer;
+    height: 40px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.new-content button:hover {
+    background-color: #c27f03;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark .new-content button:hover {
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }

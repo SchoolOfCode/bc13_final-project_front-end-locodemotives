@@ -7,8 +7,11 @@ export default function LearnTopic({ resourceData }) {
         <h1>{resourceData.type}</h1>
       </div>
       <div className="topic-body">
-        <h1>{resourceData.title}</h1>
-        <p>{resourceData.description}</p>
+        <div className="topic-body-info">
+            <h1>{resourceData.title}</h1>
+            <p>{resourceData.description}</p>
+        </div>
+        <button>Access &gt;</button>
       </div>
     </div>
   );

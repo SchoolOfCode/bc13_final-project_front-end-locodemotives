@@ -9,12 +9,15 @@ import CreateResponse from "./pages/CreateResponse";
 import CreatePost from "./pages/CreatePost";
 import CreateResource from "./pages/CreateResource";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PrivateRoute from "./PrivateRoute";
+import { ThemeContext } from "./hooks/ThemeContext";
 // import env from 'react-dotenv';
 
 function App() {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
@@ -73,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
       <Navbar
         isAuthenticated={isAuthenticated}
         logout={logout}

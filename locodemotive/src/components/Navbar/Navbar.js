@@ -21,7 +21,7 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
         <img src={Logo} alt="Locodemotive Logo"></img>
       </Link>
       <ul>
-        {isAuthenticated ? <button onClick={logout}>Log-out</button> : <></>}
+        {isAuthenticated ? <li><button onClick={logout}>Log-out</button></li> : <></>}
         {isAuthenticated ? <CustomLink to="/home">Home</CustomLink> : <></>}
         {isAuthenticated ? <CustomLink to="/learn">Learn</CustomLink> : <></>}
         {isAuthenticated ? (

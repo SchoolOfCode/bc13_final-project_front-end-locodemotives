@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap');
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+.app-dark { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #161620;
+  overflow-x: hidden;
+}
+
+.app-light { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
 :root {
   background-color: rgb(255, 255, 255);
 }
@@ -10,21 +29,222 @@
   color: #fff;
 }
 
+.app-dark html {
+  background-color: #161620;
+}
+
+.app-dark .login-container {
+  background-color: #12121a;
+}
+
+.app-dark .login-container .logo-container {
+  background-color: #E5619D;
+}
+
+.app-dark .login-container .login-form-container button {
+  background-color: #E5619D;
+}
+
+.app-dark .login-container .login-form-container input {
+  background-color: #161620;
+  color: #fff;
+}
+
+.app-dark nav {
+  background-color: #12121a;
+  color: #E5619D;
+}
+
+.app-dark nav li.active {
+  background-color: #E5619D;
+}
+
+.app-dark nav li:hover {
+  background-color: #161620;
+}
+
+.app-dark nav .site-title img:hover {
+  -webkit-filter: hue-rotate(-60deg) contrast(200%) brightness(60%);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(60%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+/* .app-dark nav button#bell {
+  background-color: #12121a;
+} */
+
+.app-dark nav button#bell:hover {
+  background-color: #161620;
+}
+
+.app-dark nav button#bell img {
+  -webkit-filter: hue-rotate(-60deg);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(90%);
+}
+
+.app-dark nav .site-title img {
+  -webkit-filter: hue-rotate(-60deg);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(90%);
+}
+
+.app-dark nav button:nth-child(1) {
+  color: #ffffff;
+}
+
+.app-dark nav button:nth-child(1):hover {
+  background-color: #5EB9BA;
+  color: #fff;
+}
+
+.app-dark .explore-container button {
+  background-color: #E5619D;
+}
+
+.app-dark .learn-topic-container .topic-container .topic-type {
+  background-color: #E5619D;
+}
+
+.app-dark .learn-topic-container div {
+  background-color: #12121a;
+}
+
+.app-dark .explore-header-selectors select {
+  background-color: #12121a;
+  color: #fff;
+}
+
+.app-dark .my-area select {
+  background-color: #12121a;
+  color: #fff;
+}
+
+.app-dark .whats-new .new-content {
+  background-color: #12121a;
+}
+
+.app-dark .whats-new .new-content button {
+  background-color: #E5619D;
+}
+
+.app-dark .navigation-bar input {
+  background-color: #12121a;
+  color: #fff;
+}
+
+.app-dark .navigation-bar button {
+  background-color: #E5619D;
+}
+
+.app-dark .navigation-bar select {
+  background-color: #12121a;
+  color: #fff;
+}
+
+.app-dark .post .post-info {
+  background-color: #E5619D;
+}
+
+.app-dark .post .post-info .topic-container {
+  background-color: #b84d7d;
+}
+
+.app-dark .post .post-body {
+  background-color: #12121a;
+  color: #fff;
+}
+
+.app-dark .response .response-info {
+  background-color: #12121a;
+}
+
+.app-dark .response .response-info .response-info-container {
+  background-color: #E5619D;
+}
+
+.app-dark .response .response-info .response-info-container .response-body {
+  background-color: #b84d7d;
+}
+
+.app-dark .response .response-info button {
+  background-color: #E5619D;
+}
+
+.app-dark .notification-tab {
+  background-color: #12121a;
+}
+
+.app-dark .notification {
+  background-color: #E5619D;
+}
+
+.app-dark body::-webkit-scrollbar {
+  width: 5px; 
+}
+
+.app-dark body::-webkit-scrollbar-track {
+  background-color: #50505000;
+}
+
+.app-dark body::-webkit-scrollbar-thumb {
+  background: #E5619D;
+  border-radius: 10px;
+}
+
+.app-dark .settings-menu {
+  background-color: #12121a;
+}
+
+.app-dark .settings-menu .settings-navbar {
+  background-color: #12121a;
+}
+.app-dark .settings-menu .settings-navbar ul {
+  background-color: #12121a;
+}
+
+.app-dark .settings-menu .settings-navbar ul li button {
+  background-color: #E5619D;
+}
+
+.app-dark .settings-general-content div {
+  background-color: #161620;
+}
+
+.app-dark .settings-general-content div button {
+  background-color: #E5619D;
+}
+
+.app-dark .settings-account-content div {
+  background-color: #161620;
+}
+
+.app-dark .settings-account-content div button {
+  background-color: #E5619D;
+}
+
+.app-dark .topics h2:hover {
+  color: #E5619D;
+}
+
 .app-light {
   background-color: #ffffff;
   transition: 0.5s;
   color: #161620;
 }
 
-html::-webkit-scrollbar {
+
+app-light *::-webkit-scrollbar {
   width: 5px; 
 }
 
-html::-webkit-scrollbar-track {
+app-light *::-webkit-scrollbar-track {
   background-color: #50505000;
 }
 
-html::-webkit-scrollbar-thumb {
+app-light *::-webkit-scrollbar-thumb {
   background: #FFA500;
   border-radius: 10px;
 }
@@ -37,34 +257,6 @@ html::-webkit-scrollbar-thumb {
 
 body {
   margin: 0;
-}
-
-input:hover {
-  border: 2px solid #FFA500;
-  outline: 2px solid #FFA500;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-input:focus {
-  outline: 2px solid #FFA500;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-button:hover {
-  background-color: #b17300;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
 .nav {
@@ -151,6 +343,8 @@ button:hover {
   color: #EE3780;
   background-color: #50505000;
   font-weight: 300;
+  height: 100%;
+  width: 100px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -167,4 +361,58 @@ button:hover {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
   cursor: pointer;
+}
+
+.explore-header-top button:hover {
+  background-color: #c27f03;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.explore-header-selectors button:hover {
+  background-color: #a1a1a1;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.topic-container .topic-body button:hover {
+  background-color: #c27f03;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-top button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-selectors button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .topic-container .topic-body button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
