@@ -94,3 +94,15 @@ p {
     align-items: center;
     justify-content: flex-end;
 }
+
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span img {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+}

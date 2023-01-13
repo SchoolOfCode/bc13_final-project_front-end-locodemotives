@@ -5,12 +5,14 @@ import "./Post.css";
 
 export default function Post({ postData, repliesStart }) {
   const [authorName, setAuthorName] = useState("");
+  const [authorImage, setAuthorImage] = useState("");
   const [replies, setReplies] = useState(repliesStart);
 
   async function getAuthorName(id) {
     let nameJSON = await fetch(`${process.env.REACT_APP_URL}/user/?id=${id}`);
     let name = await nameJSON.json();
     setAuthorName(name.payload.name);
+    setAuthorImage(name.payload.image_url);
   }
   async function getReplies(post_id) {
     let responsesJSON = await fetch(
@@ -34,6 +36,9 @@ export default function Post({ postData, repliesStart }) {
             <div className="topic-container">
               <h3>{postData.topic}</h3>
             </div>
+            <span>
+              <img id="pfp" src={authorImage} alt="ProfileImage"></img>
+            </span>
             <h3>{authorName}</h3>
             <h3>{postData.date_created.slice(0, 10)}</h3>
           </div>
