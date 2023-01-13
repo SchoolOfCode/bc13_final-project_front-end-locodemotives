@@ -12,7 +12,7 @@
     flex-flow: column nowrap;
     align-items: center;
     color: #fff;
-    width: 80%;
+    width: 68.5%;
 }
 
 .post-container:last-child {
@@ -81,8 +81,18 @@ p {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .deleteButton:hover {
-    background-color: #EE3780;
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }

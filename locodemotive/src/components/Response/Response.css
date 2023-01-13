@@ -1,7 +1,7 @@
 .response {
     display: flex;
     flex-flow: column nowrap;
-    width: 80%;
+    width: 68.5%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 100%;
@@ -55,4 +55,27 @@
     font-size: 16px;
     cursor: pointer;
     /* margin-top: 5px; */
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.response button:hover {
+    background-color: #c27f03;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark .response button:hover {
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }

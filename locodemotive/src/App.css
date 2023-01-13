@@ -225,6 +225,10 @@ body {
   background-color: #E5619D;
 }
 
+.app-dark .topics h2:hover {
+  color: #E5619D;
+}
+
 .app-light {
   background-color: #ffffff;
   transition: 0.5s;
@@ -253,25 +257,6 @@ app-light *::-webkit-scrollbar-thumb {
 
 body {
   margin: 0;
-}
-
-.app-light input:hover {
-  border: 2px solid #FFA500;
-  outline: 2px solid #FFA500;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-.app-light input:focus {
-  outline: 2px solid #FFA500;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
 .nav {
@@ -376,4 +361,58 @@ body {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
   cursor: pointer;
+}
+
+.explore-header-top button:hover {
+  background-color: #c27f03;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.explore-header-selectors button:hover {
+  background-color: #a1a1a1;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.topic-container .topic-body button:hover {
+  background-color: #c27f03;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-top button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-selectors button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .topic-container .topic-body button:hover {
+  background-color: #a8275b;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
