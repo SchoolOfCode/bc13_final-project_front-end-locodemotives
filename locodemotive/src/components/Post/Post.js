@@ -30,11 +30,13 @@ export default function Post({ postData, repliesStart }) {
       <div className="post">
         <div className="post-info">
           <h1>{postData.title}</h1>
-          <div className="topic-container">
-            <h3>{postData.topic}</h3>
+          <div className="post-extra-info">
+            <div className="topic-container">
+              <h3>{postData.topic}</h3>
+            </div>
+            <h3>{authorName}</h3>
+            <h3>{postData.date_created.slice(0, 10)}</h3>
           </div>
-          <h2>{authorName}</h2>
-          <h2>{postData.date_created.slice(0, 10)}</h2>
         </div>
         <div className="post-body">
           <p>{postData.body}</p>
