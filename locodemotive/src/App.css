@@ -485,3 +485,7 @@ body {
 .topic-body button:hover {
   background-color: #c27f03;
 }
+
+.app-dark .learnTopic-topic-container .topic-type {
+  background-color: #E5619D;
+}

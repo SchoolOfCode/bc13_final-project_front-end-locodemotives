@@ -39,6 +39,20 @@ function App() {
     getUserStatus(foundUser);
   }, []);
 
+  async function getUserTheme(foundTheme) {
+    if (foundTheme === true) {
+      theme.dispatch({ type: 'LIGHTMODE '})
+    } else if (foundTheme === false) {
+      theme.dispatch({ type: 'DARKMODE' })
+    }
+  }
+
+useEffect(() => {
+    const userTheme = localStorage.getItem('theme');
+    const foundTheme = JSON.parse(userTheme)
+    getUserTheme(foundTheme);
+},[])
+
   async function getUser(email, password) {
     let userFetch = await fetch(
       `${process.env.REACT_APP_URL}/user/?email=${email}`
