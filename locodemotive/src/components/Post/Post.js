@@ -29,7 +29,40 @@ export default function Post({ postData, repliesStart }) {
 
   return (
     <div className="post-container">
+      <div className="post-title-bar">
+        <div className="post-title-topic">
+          <div className="topic-container">
+            <h3>{postData.topic}</h3>
+          </div>
+          <h1>{postData.title}</h1>
+        </div>
+      </div>
       <div className="post">
+        <div className="post-author">
+          <span>
+            <img id="pfp" src={authorImage} alt="ProfileImage"></img>
+          </span>
+          <h3>{authorName}</h3>
+        </div>
+        <div className="post-body-box">
+          <div className="post-date">
+            <h3>{postData.date_created.slice(0, 10)}</h3>
+          </div>
+          <div className="post-body">
+            <p>{postData.body}</p>
+          </div>
+          <div className="post-body-delete">
+            {postData.author.toString() === localStorage.user ? (
+              <DeletePost post_id={postData.post_id} replies={replies} />
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+      </div>
+      <Response replies={replies} postData={postData} />
+
+      {/* <div className="post">
         <div className="post-info">
           <h1>{postData.title}</h1>
           <div className="post-extra-info">
@@ -43,6 +76,7 @@ export default function Post({ postData, repliesStart }) {
             <h3>{postData.date_created.slice(0, 10)}</h3>
           </div>
         </div>
+
         <div className="post-body">
           <p>{postData.body}</p>
           {postData.author.toString() === localStorage.user ? (
@@ -52,7 +86,8 @@ export default function Post({ postData, repliesStart }) {
           )}
         </div>
       </div>
-      <Response replies={replies} postData={postData} />
+
+      <Response replies={replies} postData={postData} /> */}
     </div>
   );
 }
