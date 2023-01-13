@@ -61,33 +61,6 @@ export default function Post({ postData, repliesStart }) {
         </div>
       </div>
       <Response replies={replies} postData={postData} />
-
-      {/* <div className="post">
-        <div className="post-info">
-          <h1>{postData.title}</h1>
-          <div className="post-extra-info">
-            <div className="topic-container">
-              <h3>{postData.topic}</h3>
-            </div>
-            <span>
-              <img id="pfp" src={authorImage} alt="ProfileImage"></img>
-            </span>
-            <h3>{authorName}</h3>
-            <h3>{postData.date_created.slice(0, 10)}</h3>
-          </div>
-        </div>
-
-        <div className="post-body">
-          <p>{postData.body}</p>
-          {postData.author.toString() === localStorage.user ? (
-            <DeletePost post_id={postData.post_id} replies={replies} />
-          ) : (
-            <></>
-          )}
-        </div>
-      </div>
-
-      <Response replies={replies} postData={postData} /> */}
     </div>
   );
 }

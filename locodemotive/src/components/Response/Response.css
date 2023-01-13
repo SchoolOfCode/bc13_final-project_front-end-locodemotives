@@ -2,7 +2,7 @@
     padding: 20px;
     padding-top: 0px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
     width: 100%;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -17,10 +17,21 @@
     border-radius: 5px;
     width: 140px;
     height: 40px;
-    align-self: flex-end;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+}
+
+.new-response-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.responses a {
+    width: 140px;
+    height: 40px;
 }
 
 .response-info-container {
@@ -95,48 +106,3 @@ h3 {
     margin-block-end: 0px;
 }
 
-/* .response-info {
-    display: flex;
-    flex-flow: column;
-    background-color: #c7c7c7;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    gap: 10px;
-    align-items: flex-end;
-}
-
-.response-info-container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 3vw;
-    background-color: #c27f03;
-    padding: 10px;
-    color: #fff;
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-}
-
-.response-body {
-    background-color: #FFA500;
-    width: 63%;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-.response button {
-    border: none;
-    background-color: #FFA500;
-    border-radius: 5px;
-    width: 150px;
-    height: 50px;
-    align-self: flex-end;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-} */

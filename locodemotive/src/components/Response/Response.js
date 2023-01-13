@@ -50,21 +50,18 @@ export default function Response({ replies, postData }) {
             <p>{reply.body}</p>
           </div>
         </div>
-        {/* <h2>{replyAuthors[index]}</h2>
-        <h3>{reply.date_created.slice(0, 10)}</h3>
-        <div className="response-body">
-          <p>{reply.body}</p>
-        </div> */}
       </div>
     );
   });
 
   return (
     <div className="responses">
-      {showResponse}
-      <CustomLink to="/new_response" postData={postData}>
-        New Response
-      </CustomLink>
+      {replies[0] ? showResponse : <></>}
+      <div className="new-response-button">
+        <CustomLink to="/new_response" postData={postData}>
+          New Response
+        </CustomLink>
+      </div>
     </div>
   );
 }
