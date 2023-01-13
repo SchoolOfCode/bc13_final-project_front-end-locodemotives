@@ -42,6 +42,7 @@ export default function NewPost({ userData }) {
         <input
           type="text"
           placeholder="Title"
+          required
           onChange={(e) => {
             setTitle(e.target.value);
           }}
@@ -50,15 +51,21 @@ export default function NewPost({ userData }) {
           type="text"
           placeholder="Post Body"
           wordWrap="false"
+          required
           onChange={(e) => {
             setBody(e.target.value);
           }}
         ></textarea>
         <select
+          required
           onChange={(e) => {
             setTopic(e.target.value);
           }}
         >
+          {" "}
+          <option selected disabled>
+            Select Topic:
+          </option>
           {topics.map((topic, index) => {
             return (
               <option value={topic} key={index}>
