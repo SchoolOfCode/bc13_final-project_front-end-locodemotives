@@ -57,6 +57,20 @@
     /* margin-top: 3vh; */
     font-size: 1em;
     cursor: pointer;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.new-resource button:hover {
+    background-color: #c27f03;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .back-button button {
@@ -69,4 +83,33 @@
     /* margin-top: 3vh; */
     font-size: 1em;
     cursor: pointer;
+}
+
+.app-dark .new-resource-submission input {
+    background-color: #12121a;
+    color: #fff;
+}
+
+.app-dark .new-resource-submission textarea {
+    background-color: #12121a;
+    color: #fff;
+}
+
+.app-dark .new-resource-submission select {
+    background-color: #12121a;
+    color: #fff;
+}
+
+.app-dark .new-resource-submission button {
+    background-color: #EE3780;
+    color: #fff;
+}
+
+.app-dark .new-resource-submission button:hover {
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
