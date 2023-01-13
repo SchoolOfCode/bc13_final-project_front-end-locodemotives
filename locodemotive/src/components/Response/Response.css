@@ -11,6 +11,16 @@
     gap: 20px;
 }
 
+.hidden-group {
+    display: none;
+}
+
+.show-group {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
 .responses button {
     border: none;
     background-color: #FFA500;
@@ -27,6 +37,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    gap: 20px;
+}
+
+.new-response-button .show-reply-button {
+    width: 50px;
 }
 
 .responses a {
@@ -105,4 +120,3 @@ h3 {
     margin-block-start: 0px;
     margin-block-end: 0px;
 }
-
