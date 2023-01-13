@@ -421,3 +421,67 @@ body {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
+
+.app-dark .post-title-bar {
+  background-color: #E5619D;
+}
+
+.app-dark .post-title-topic .topic-container {
+  background-color: #161620;
+}
+
+.app-dark .post {
+  background-color: #12121a;
+}
+
+.app-dark .post .post-body {
+  background-color: #161620;
+}
+
+.app-dark .post-date {
+  background-color: #E5619D;
+}
+
+.app-dark .post-author {
+  background-color: #E5619D;
+}
+
+.app-dark .responses {
+  background-color: #12121a;
+}
+
+.app-dark .response-info-container {
+  background-color: #12121a;
+}
+
+.app-dark .response-author {
+  background-color: #E5619D;
+}
+
+.app-dark .response-date {
+  background-color: #E5619D;
+}
+
+.app-dark .response-body {
+  background-color: #161620;
+}
+
+.app-dark .new-response-button button {
+  background-color: #E5619D;
+}
+
+.post-date h3 {
+  font-weight: 500;
+}
+
+.response-date h3 {
+  font-weight: 500;
+}
+
+.app-dark .topic-body button:hover {
+  background-color: #a8275b;
+}
+
+.topic-body button:hover {
+  background-color: #c27f03;
+}
