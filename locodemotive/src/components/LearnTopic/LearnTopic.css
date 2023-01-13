@@ -24,25 +24,27 @@
     flex-flow: column nowrap;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 10px;
-    height: 90%;
+    padding: 15px;
+    height: 100%;
 }
 
 .topic-body h1 {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 400;
     margin: 0;
-    margin-bottom:5px;
 }
 
-.topic-body p {
+.topic-body-info p {
     font-size: 1.1em;
     font-weight: 200;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     overflow-y: scroll;
-    margin: 0;
+    height: 80%;
+    padding-bottom: 20px;
+}
+
+.topic-body-info {
     height: 50%;
-    
 }
 
 .topic-body button {
@@ -53,6 +55,4 @@
     height: 40px;
     font-size: 1.2em;
     cursor: pointer;
-    
 }
-
