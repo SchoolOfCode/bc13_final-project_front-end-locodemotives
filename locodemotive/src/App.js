@@ -12,7 +12,6 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import PrivateRoute from "./PrivateRoute";
 import { ThemeContext } from "./hooks/ThemeContext";
-// import env from 'react-dotenv';
 
 function App() {
   const navigate = useNavigate();
