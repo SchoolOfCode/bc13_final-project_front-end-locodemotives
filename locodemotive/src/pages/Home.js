@@ -2,9 +2,7 @@ import "./Home.css";
 import NewContent from "../components/NewContent/NewContent";
 import ChannelContent from "../components/ChannelContent/ChannelContent";
 import { useEffect, useState } from "react";
-// import Collapsible from "../components/HomePost/HomePost";
 import HomePost from "../components/HomePost/HomePost";
-// import Post from "../components/Post/Post";
 
 export default function Home({ userData }) {
   const [newContent, setNewContent] = useState([]);
@@ -37,48 +35,22 @@ export default function Home({ userData }) {
     setMyResponses(data.payload);
   };
 
-  // const sortPostOrReplyByDate = async () => {
-  //   const firstThreePosts = await myPosts.slice(0, 3);
-  //   const firstThreeResponses = await myResponses.slice(0, 3);
+  // Sort the 'MyPosts' into the 3 most recent posts OR replies
+  const sortPostOrReplyByDate = async () => {
+    const firstThreePosts = await myPosts.slice(0, 3); // Already sorted by date in database
+    const firstThreeResponses = await myResponses.slice(0, 3); // Already sorted by date in database
 
-  //   let postandr = [];
+    let postAndReplies = [];
+    postAndReplies.push(...firstThreePosts, ...firstThreeResponses); // Combine posts and responses into a new array
 
-  //   postandr.push(...firstThreePosts, ...firstThreeResponses);
+    postAndReplies.sort((a, b) => {
+      return new Date(b.date_created) - new Date(a.date_created); // Sort combined array by date
+    });
 
-  // postandr.sort((a, b) => {
-  //   return a.date_created - b.date_created;
-  // });
+    postAndReplies = postAndReplies.slice(0, 3); // Slice array to just be first 3 posts or arrays
 
-  //   const sortArray = (arr = []) => {
-  //     arr.sort((a, b) => {
-  //       return b.date_created - a.date_created;
-  //     });
-  //   };
-
-  //   console.log(postandr);
-
-  //   sortArray(postandr);
-
-  //   console.log(postandr);
-
-  //   postandr = postandr.slice(0, 3);
-
-  //   setPostsAndResponses(postandr);
-  // };
-
-  // const objectComparisonCallback = (arrayItemA, arrayItemB, arrayItemC) => {
-  //   if (arrayItemA.date_created < arrayItemB.date_created && ) {
-  //     return -1
-  //   }
-
-  //   if (arrayItemA.date_created > arrayItemB.date_created) {
-  //     return 1
-  //   }
-
-  //   return 0
-  // }
-
-  // arrayOfObjects.sort(objectComparisonCallback)
+    setPostsAndResponses(postAndReplies); // Set state to new sliced array
+  };
 
   useEffect(() => {
     getNewContent();
@@ -86,26 +58,15 @@ export default function Home({ userData }) {
     getMyResponses();
   }, []);
 
-  // useEffect(() => {
-  //   sortPostOrReplyByDate();
-  // }, [myResponses]);
+  useEffect(() => {
+    sortPostOrReplyByDate();
+  }, [myResponses]);
 
   return (
     <div className="my-learning">
       <div className="resource-container">
         <div className="my-area">
           <h1>My Posts</h1>
-          {/* <select name="My Posts">
-            <option>My Posts</option>
-            {myPosts.map((post, index) => {
-              return <option key={index}>{post.title}</option>;
-            })}
-          </select>
-          <select name="My Resources">
-            <option>Resource 1</option>
-            <option>Resource 2</option>
-          </select> */}
-
           {postsAndResponses[0] ? (
             <HomePost
               topic={postsAndResponses[0].topic}
