@@ -41,7 +41,7 @@
 }
 
 .new-response-button .show-reply-button {
-    width: 50px;
+    width: 190px;
 }
 
 .responses a {
@@ -120,3 +120,4 @@ h3 {
     margin-block-start: 0px;
     margin-block-end: 0px;
 }
+
