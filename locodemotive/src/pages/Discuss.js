@@ -13,6 +13,7 @@ export default function Discuss() {
     "Digital Development",
     "Buisness Analysis",
     "General",
+    "Marketing",
   ];
 
   async function getAllPosts() {

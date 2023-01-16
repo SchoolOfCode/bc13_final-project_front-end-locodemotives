@@ -8,6 +8,7 @@ export default function Login({ login }) {
     "Support Services",
     "Digital Development",
     "Business Analysis",
+    "Marketing",
   ];
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

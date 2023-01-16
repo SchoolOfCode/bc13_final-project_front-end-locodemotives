@@ -56,6 +56,7 @@ export default function Learn() {
           <h2 onClick={() => setTopic("Business Analysis")}>
             Business Analysis
           </h2>
+          <h2 onClick={() => setTopic("Marketing")}>Marketing</h2>
         </div>
       </div>
       <div className="explore-container">
