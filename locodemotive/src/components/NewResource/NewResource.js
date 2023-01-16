@@ -12,7 +12,7 @@ export default function NewResource({ userData }) {
     author: "",
     date_created: "",
   });
-  
+
   const navigate = useNavigate();
 
   const handleClickSubmit = async () => {
@@ -34,7 +34,7 @@ export default function NewResource({ userData }) {
     } catch (error) {
       console.log(error);
     }
-    navigate('/learn')
+    navigate("/learn");
   };
 
   return (
@@ -85,6 +85,7 @@ export default function NewResource({ userData }) {
           <option>Support Services</option>
           <option>Digital Development</option>
           <option>Business Analysis</option>
+          <option>Marketing</option>
         </select>
         <select
           placeholder="Type"

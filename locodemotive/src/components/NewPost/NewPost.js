@@ -11,6 +11,7 @@ export default function NewPost({ userData }) {
     "DevOps",
     "Digital Development",
     "Buisness Analysis",
+    "Marketing",
   ];
 
   let [title, setTitle] = useState("");
