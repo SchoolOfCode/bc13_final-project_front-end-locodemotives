@@ -1,9 +1,8 @@
 import "./Response.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
-import arrow from "../Images/60926.png";
 
-export default function Response({ replies, postData }) {
+export default function Response({ replies, postData, postVisibility }) {
   const [replyAuthors, setReplyAuthors] = useState([]);
   const [replyAuthorsImages, setReplyAuthorsImages] = useState([]);
 
@@ -41,7 +40,7 @@ export default function Response({ replies, postData }) {
   }, [replies]);
 
   return (
-    <div className="responses">
+    <div className={postVisibility ? "hidden-group" : "responses"}>
       <div className={replyVisability}>
         {replies && replies.map && replies.map((reply, index) => {
           return (

@@ -167,11 +167,6 @@ body {
   background-color: var(--main-dark-secondary);
 }
 
-.app-dark .post .post-body {
-  background-color: var(--main-dark-bg2);
-  color: var(--main-light-bg);
-}
-
 .app-dark .response .response-info {
   background-color: var(--main-dark-bg2);
 }
@@ -462,7 +457,7 @@ body {
 }
 
 .app-dark .post .post-body {
-  background-color: var(--main-dark-bg1);
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .post-date {
@@ -554,4 +549,9 @@ body {
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.page-buttons button {
+  color: #fff;
+  cursor: pointer;
 }

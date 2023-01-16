@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 80%;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
     animation: fadeIn 1s;
 }
 
@@ -34,10 +34,12 @@
     justify-content: flex-start;
     gap: 30px;
     padding-left: 20px;
+    width: 100%;
 }
 
 h1 {
     font-weight: 500;
+    width: 100%;
 }
 
 .topic-container {
@@ -60,13 +62,14 @@ h1 {
 
 .post {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
     background-color: #d9d9d99a;
     padding: 20px;
     gap: 20px;
+    animation: fadeIn 1s;
 }
 
 .post-author {
@@ -95,6 +98,7 @@ h1 {
 
 .post-author > h3 {
     text-align: center;
+    font-weight: 400;
 }
 
 h3 {
@@ -168,4 +172,48 @@ p {
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+}
+
+.post-title-topic button.arrow-down {
+    font-size: 50px;
+    margin: 0;
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.title-arrow-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 30px;
+}
+
+.hidden-post {
+    display: none;
+}
+
+.post-body-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #d9d9d99a;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.app-dark .post-body-container {
+    background-color: #161620;
 }
