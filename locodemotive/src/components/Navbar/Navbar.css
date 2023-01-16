@@ -38,3 +38,11 @@ span img {
     width: 65px;
     border-radius: 50%;
 }
+
+.theme-container button {
+    padding: 25px;
+}
+
+.theme-container button:hover {
+    background-color: #FFA500;
+}
