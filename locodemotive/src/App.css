@@ -5,6 +5,24 @@
   100% { opacity: 1; }
 }
 
+:root {
+  --main-light: #FFA500;
+  --main-light-bg: #ffffff;
+  --main-light-btn: #EE3780;
+  --main-light-btn-hover: #c27f03;
+  --main-light-selector-hover: #a1a1a1;
+  --main-light-grey-btn: #E6E6E6;
+
+  --main-dark: #E5619D;
+  --main-dark-secondary: #b84d7d;
+  --main-dark-bg1: #161620;
+  --main-dark-bg2: #12121a;
+  --main-dark-btn: #5EB9BA;
+  --main-dark-btn-hover: #a8275b;
+
+  background-color: var(--main-light-bg);
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -13,59 +31,55 @@ body {
 .app-dark { 
   width: 100vw;
   min-height: 100vh;
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
   overflow-x: hidden;
 }
 
 .app-light { 
   width: 100vw;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--main-light-bg);
   overflow-x: hidden;
 }
 
-:root {
-  background-color: rgb(255, 255, 255);
-}
-
 .app-dark {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
   transition: 0.5s;
-  color: #fff;
+  color: var(--main-light-bg);
 }
 
 .app-dark html {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .login-container {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .login-container .logo-container {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .login-container .login-form-container button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .login-container .login-form-container input {
-  background-color: #161620;
-  color: #fff;
+  background-color: var(--main-dark-bg1);
+  color: var(--main-light-bg);
 }
 
 .app-dark nav {
-  background-color: #12121a;
-  color: #E5619D;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-dark);
 }
 
 .app-dark nav li.active {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark nav li:hover {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark nav .site-title img:hover {
@@ -78,12 +92,8 @@ body {
   transition: all 1s ease;
 }
 
-/* .app-dark nav button#bell {
-  background-color: #12121a;
-} */
-
 .app-dark nav button#bell:hover {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark nav button#bell img {
@@ -97,93 +107,93 @@ body {
 }
 
 .app-dark nav button:nth-child(1) {
-  color: #ffffff;
+  color: var(--main-light-bg);
 }
 
 .app-dark nav button:nth-child(1):hover {
-  background-color: #5EB9BA;
-  color: #fff;
+  background-color: var(--main-dark-btn);
+  color: var(--main-light-bg);
 }
 
 .app-dark .explore-container button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .learn-topic-container .topic-container .topic-type {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .learn-topic-container div {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .explore-header-selectors select {
-  background-color: #12121a;
-  color: #fff;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
 }
 
 .app-dark .my-area select {
-  background-color: #12121a;
-  color: #fff;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
 }
 
 .app-dark .whats-new .new-content {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .whats-new .new-content button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .navigation-bar input {
-  background-color: #12121a;
-  color: #fff;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
 }
 
 .app-dark .navigation-bar button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .navigation-bar select {
-  background-color: #12121a;
-  color: #fff;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
 }
 
 .app-dark .post .post-info {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .post .post-info .topic-container {
-  background-color: #b84d7d;
+  background-color: var(--main-dark-secondary);
 }
 
 .app-dark .post .post-body {
-  background-color: #12121a;
-  color: #fff;
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
 }
 
 .app-dark .response .response-info {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .response .response-info .response-info-container {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .response .response-info .response-info-container .response-body {
-  background-color: #b84d7d;
+  background-color: var(--main-dark-secondary);
 }
 
 .app-dark .response .response-info button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .notification-tab {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .notification {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark body::-webkit-scrollbar {
@@ -195,49 +205,49 @@ body {
 }
 
 .app-dark body::-webkit-scrollbar-thumb {
-  background: #E5619D;
+  background: var(--main-dark);
   border-radius: 10px;
 }
 
 .app-dark .settings-menu {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .settings-menu .settings-navbar {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 .app-dark .settings-menu .settings-navbar ul {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .settings-menu .settings-navbar ul li button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .settings-general-content div {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .settings-general-content div button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .settings-account-content div {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .settings-account-content div button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .topics h2:hover {
-  color: #E5619D;
+  color: var(--main-dark);
 }
 
 .app-light {
-  background-color: #ffffff;
+  background-color: var(--main-light-bg);
   transition: 0.5s;
-  color: #161620;
+  color: var(--main-dark-bg1);
 }
 
 
@@ -250,7 +260,7 @@ app-light *::-webkit-scrollbar-track {
 }
 
 app-light *::-webkit-scrollbar-thumb {
-  background: #FFA500;
+  background: var(--main-light);
   border-radius: 10px;
 }
 
@@ -265,8 +275,8 @@ body {
 }
 
 .nav {
-  background-color: rgb(255, 255, 255);
-  color: #FFA500;
+  background-color: var(--main-light-bg);
+  color: var(--main-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,8 +330,8 @@ body {
 }
 
 .nav li.active {
-  background-color: #FFA500;
-  color: #fff;
+  background-color: var(--main-light);
+  color: var(--main-light-bg);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -345,7 +355,7 @@ body {
 .nav button {
   border: none;
   font-size: 20px;
-  color: #EE3780;
+  color: var(--main-light-btn);
   background-color: #50505000;
   font-weight: 300;
   height: 100%;
@@ -358,8 +368,8 @@ body {
 }
 
 .nav button:hover {
-  background-color: #EE3780;
-  color: #fff;
+  background-color: var(--main-light-btn);
+  color: var(--main-light-bg);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -369,7 +379,7 @@ body {
 }
 
 .explore-header-top button:hover {
-  background-color: #c27f03;
+  background-color: var(--main-light-btn-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -378,7 +388,7 @@ body {
 }
 
 .explore-header-selectors button:hover {
-  background-color: #a1a1a1;
+  background-color: var(--main-light-selector-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -387,7 +397,7 @@ body {
 }
 
 .topic-container .topic-body button:hover {
-  background-color: #c27f03;
+  background-color: var(--main-light-btn-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -396,7 +406,7 @@ body {
 }
 
 .app-dark .explore-header-top button:hover {
-  background-color: #a8275b;
+  background-color: var(--main-dark-btn-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -405,7 +415,7 @@ body {
 }
 
 .app-dark .explore-header-selectors button:hover {
-  background-color: #a8275b;
+  background-color: var(--main-dark-btn-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -414,7 +424,7 @@ body {
 }
 
 .app-dark .topic-container .topic-body button:hover {
-  background-color: #a8275b;
+  background-color: var(--main-dark-btn-hover);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -423,51 +433,51 @@ body {
 }
 
 .app-dark .post-title-bar {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .post-title-topic .topic-container {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .post {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .post .post-body {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .post-date {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .post-author {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .responses {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .response-info-container {
-  background-color: #12121a;
+  background-color: var(--main-dark-bg2);
 }
 
 .app-dark .response-author {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .response-date {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .app-dark .response-body {
-  background-color: #161620;
+  background-color: var(--main-dark-bg1);
 }
 
 .app-dark .new-response-button button {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
 
 .post-date h3 {
@@ -479,13 +489,13 @@ body {
 }
 
 .app-dark .topic-body button:hover {
-  background-color: #a8275b;
+  background-color: var(--main-dark-btn-hover);
 }
 
 .topic-body button:hover {
-  background-color: #c27f03;
+  background-color: var(--main-light-btn-hover);
 }
 
 .app-dark .learnTopic-topic-container .topic-type {
-  background-color: #E5619D;
+  background-color: var(--main-dark);
 }
