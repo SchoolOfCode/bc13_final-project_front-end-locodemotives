@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext.js";
 import './ThemeBtn.css'
+import Moon from '../Images/Moon.svg';
+import Sun from '../Images/Sun.svg';
 
 function ThemeButton() {
     const theme = useContext(ThemeContext);
@@ -19,7 +21,7 @@ function ThemeButton() {
 
     return (
         <button className={`btn ${darkMode ? "btn-dark" : "btn-light"}`} onClick={onClick}>
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            <img src={darkMode ? Sun : Moon} alt="theme"></img>
         </button>
     )
 }

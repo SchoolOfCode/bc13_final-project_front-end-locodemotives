@@ -4,6 +4,7 @@ import "./Navbar.css";
 import Logo from "./Logo.png";
 import Bell from "./Bell.svg";
 import NotificationTab from '../NotificationTab/NotificationTab';
+import ThemeButton from "../ThemeButton/ThemeButton";
 // import ProfilePlaceholder from "./ProfilePlaceholder.png";
 
 export default function Navbar({ isAuthenticated, logout, userData }) {
@@ -21,7 +22,7 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
         <img src={Logo} alt="Locodemotive Logo"></img>
       </Link>
       <ul>
-        {isAuthenticated ? <li><button onClick={logout}>Log-out</button></li> : <></>}
+        {isAuthenticated ? <li><button onClick={logout} className="logout-btn">Log-out</button></li> : <></>}
         {isAuthenticated ? <CustomLink to="/home">Home</CustomLink> : <></>}
         {isAuthenticated ? <CustomLink to="/learn">Learn</CustomLink> : <></>}
         {isAuthenticated ? (
@@ -47,6 +48,9 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
         ) : (
           <></>
         )}
+        <li className="theme-container">
+          <ThemeButton/>
+        </li> 
       </ul>
     </nav>
     {isOpen && <NotificationTab/>}

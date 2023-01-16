@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import ThemeButton from '../components/ThemeButton/ThemeButton'
 import './Settings.css'
 
 export default function Settings({ userData }) {
@@ -18,10 +17,6 @@ export default function Settings({ userData }) {
                 </div>
                 {currentTab === "general" && <div className='settings-general-content'>
                     <h1>General</h1>
-                    <div className='display-container'>
-                        <h2>Display</h2>
-                        <ThemeButton/>
-                    </div>
                     <div className='notification-container'>
                         <h2>Notifications</h2>
                         <div className='checkboxes'>
