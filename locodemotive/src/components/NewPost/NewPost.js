@@ -85,7 +85,6 @@ export default function NewPost({ userData }) {
               );
             })}
           </select>
-          {/* <input type="text" placeholder="Notify a team member"></input> */}
         </div>
         <button type="submit" onClick={submitNewPost}>
           Submit
