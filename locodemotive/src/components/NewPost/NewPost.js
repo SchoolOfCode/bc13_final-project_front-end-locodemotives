@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewPost.css";
+import '../../App.css'
+import Back from '../Images/Back.png'
 
 export default function NewPost({ userData }) {
   const navigate = useNavigate();
@@ -36,50 +38,58 @@ export default function NewPost({ userData }) {
     }
   }
 
+  function back() {
+    navigate("/discuss")
+  }
+
   return (
-    <div className="new-post">
-      <h1>New Post</h1>
-      <div className="new-post-submission">
-        <input
-          type="text"
-          placeholder="Title"
-          required
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-        ></input>
-        <textarea
-          type="text"
-          placeholder="Post Body"
-          wordWrap="false"
-          required
-          onChange={(e) => {
-            setBody(e.target.value);
-          }}
-        ></textarea>
-        <select
-          required
-          onChange={(e) => {
-            setTopic(e.target.value);
-          }}
-        >
-          {" "}
-          <option selected disabled>
-            Select Topic:
-          </option>
-          {topics.map((topic, index) => {
-            return (
-              <option value={topic} key={index}>
-                {topic}
-              </option>
-            );
-          })}
-        </select>
-        {/* <input type="text" placeholder="Notify a team member"></input> */}
+    <div className="page-content">
+      <div className="back-button">
+        <button id="back-btn" onClick={back}><img src={Back} alt="back"></img></button>
       </div>
-      <button type="submit" onClick={submitNewPost}>
-        Submit
-      </button>
+      <div className="new-post">
+        <h1>New Post</h1>
+        <div className="new-post-submission">
+          <input
+            type="text"
+            placeholder="Title"
+            required
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          ></input>
+          <textarea
+            type="text"
+            placeholder="Post Body"
+            wordWrap="false"
+            required
+            onChange={(e) => {
+              setBody(e.target.value);
+            }}
+          ></textarea>
+          <select
+            required
+            onChange={(e) => {
+              setTopic(e.target.value);
+            }}
+          >
+            {" "}
+            <option selected disabled>
+              Select Topic:
+            </option>
+            {topics.map((topic, index) => {
+              return (
+                <option value={topic} key={index}>
+                  {topic}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <button type="submit" onClick={submitNewPost}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
