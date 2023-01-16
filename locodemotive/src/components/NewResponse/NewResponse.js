@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewResponse.css";
+import Back from '../Images/Back.png'
 
 export default function NewResponse({ author_id, post_id }) {
   const navigate = useNavigate();
@@ -26,21 +27,30 @@ export default function NewResponse({ author_id, post_id }) {
     }
   }
 
+  function back() {
+    navigate("/discuss")
+  }
+
   return (
-    <div className="new-response">
-      <h1>New Response</h1>
-      <div className="new-response-submission">
-        <textarea
-          type="text"
-          placeholder="Response Body"
-          onChange={(e) => {
-            setBody(e.target.value);
-          }}
-        ></textarea>
+    <div className="page-content">
+      <div className="back-button">
+        <button id="back-btn" onClick={back}><img src={Back} alt="back"></img></button>
       </div>
-      <button type="submit" onClick={submitNewResponse}>
-        Submit
-      </button>
+      <div className="new-response">
+        <h1>New Response</h1>
+        <div className="new-response-submission">
+          <textarea
+            type="text"
+            placeholder="Response Body"
+            onChange={(e) => {
+              setBody(e.target.value);
+            }}
+          ></textarea>
+        </div>
+        <button type="submit" onClick={submitNewResponse}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
