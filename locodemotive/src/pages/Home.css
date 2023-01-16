@@ -16,7 +16,7 @@ html {
     justify-content: space-between;
     flex-flow: row reverse;
     padding: 0vw 15vw 0vw 15vw;
-    /* gap: 0vw; */
+    gap: 10%;
 }
 
 .my-area {

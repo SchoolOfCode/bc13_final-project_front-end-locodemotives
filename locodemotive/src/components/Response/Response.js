@@ -1,6 +1,7 @@
 import "./Response.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
+import arrow from "../Images/60926.png";
 
 export default function Response({ replies, postData }) {
   const [replyAuthors, setReplyAuthors] = useState([]);
@@ -69,7 +70,7 @@ export default function Response({ replies, postData }) {
       </div>
       <div className="new-response-button">
         <button className="show-reply-button" onClick={changeReplyVisibility}>
-          V
+          See More Responses
         </button>
         <CustomLink to="/new_response" postData={postData}>
           New Response
