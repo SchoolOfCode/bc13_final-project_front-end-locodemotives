@@ -11,7 +11,7 @@ export default function LearnTopic({ resourceData }) {
           <h1>{resourceData.title}</h1>
           <p>{resourceData.description}</p>
         </div>
-        <a href={resourceData.link}>
+        <a href={resourceData.link} target="_blank" rel="noreferrer">
           <button>Access &gt;</button>
         </a>
       </div>
