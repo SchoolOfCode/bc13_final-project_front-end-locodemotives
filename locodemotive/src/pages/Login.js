@@ -30,14 +30,29 @@ export default function Login({ login }) {
   }
 
   async function createNewUser() {
-    console.log(newUserData);
-    let response = await fetch(`${process.env.REACT_APP_URL}/user/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUserData),
-    });
-    await response.json();
-    await login(newUserData.email, newUserData.password);
+    let valid = validateNewInfo();
+    if (valid) {
+      let response = await fetch(`${process.env.REACT_APP_URL}/user/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUserData),
+      });
+      await response.json();
+      await login(newUserData.email, newUserData.password);
+    }
+  }
+
+  function validateNewInfo() {
+    if (
+      newUserData.name !== "" &&
+      newUserData.email !== "" &&
+      newUserData.password !== "" &&
+      newUserData.team !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   return (
@@ -111,7 +126,9 @@ export default function Login({ login }) {
               placeholder="Password"
               onChange={handlePasswordChange}
             ></input>
-            <button onClick={() => login(email, password)}>Login</button>
+            <button type="button" onClick={() => login(email, password)}>
+              Login
+            </button>
             <p
               onClick={() => {
                 setNewUser(true);
