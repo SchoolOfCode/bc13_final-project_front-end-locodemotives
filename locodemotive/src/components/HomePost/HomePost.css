@@ -1,0 +1,13 @@
+.home-post-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 60%;
+}
+
+.date-topic-container {
+    display: flex;
+    flex-flow: column nowrap;
+
+}
