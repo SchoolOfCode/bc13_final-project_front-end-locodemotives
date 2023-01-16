@@ -1,4 +1,6 @@
 import "./NewResource.css";
+import '../../App.css'
+import Back from '../Images/Back.png'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -37,74 +39,83 @@ export default function NewResource({ userData }) {
     navigate("/learn");
   };
 
+  function back() {
+    navigate("/learn")
+  }
+
   return (
-    <div className="new-resource">
-      <h1>New Resource</h1>
-      <div className="new-resource-submission">
-        <input
-          type="text"
-          placeholder="Title"
-          required
-          onChange={(e) => {
-            newResourceInfo.title = e.target.value;
-            setResourceInfo(newResourceInfo);
-          }}
-        ></input>
-        <textarea
-          type="text"
-          placeholder="Description"
-          required
-          onChange={(e) => {
-            newResourceInfo.description = e.target.value;
-            setResourceInfo(newResourceInfo);
-          }}
-        ></textarea>
-        <input
-          type="text"
-          placeholder="Link"
-          required
-          onChange={(e) => {
-            newResourceInfo.link = e.target.value;
-            setResourceInfo(newResourceInfo);
-          }}
-        ></input>
-        <select
-          placeholder="Topic"
-          name="Topic"
-          required
-          onChange={(e) => {
-            newResourceInfo.topic = e.target.value;
-            setResourceInfo(newResourceInfo);
-          }}
-        >
-          <option selected disabled>
-            Select Topic:
-          </option>
-          <option>General</option>
-          <option>DevOps</option>
-          <option>Support Services</option>
-          <option>Digital Development</option>
-          <option>Business Analysis</option>
-          <option>Marketing</option>
-        </select>
-        <select
-          placeholder="Type"
-          required
-          onChange={(e) => {
-            newResourceInfo.type = e.target.value;
-            setResourceInfo(newResourceInfo);
-          }}
-        >
-          <option selected disabled>
-            Select Type:
-          </option>
-          <option>Book</option>
-          <option>Website</option>
-          <option>Course</option>
-          <option>Article</option>
-          <option>Video</option>
-        </select>
-        <button onClick={handleClickSubmit}>Submit</button>
+    <div className="page-content">
+      <div className="back-button">
+        <button id="back-btn" onClick={back}><img src={Back} alt="back"></img></button>
+      </div>
+      <div className="new-resource">
+        <h1>New Resource</h1>
+        <div className="new-resource-submission">
+          <input
+            type="text"
+            placeholder="Title"
+            required
+            onChange={(e) => {
+              newResourceInfo.title = e.target.value;
+              setResourceInfo(newResourceInfo);
+            }}
+          ></input>
+          <textarea
+            type="text"
+            placeholder="Description"
+            required
+            onChange={(e) => {
+              newResourceInfo.description = e.target.value;
+              setResourceInfo(newResourceInfo);
+            }}
+          ></textarea>
+          <input
+            type="text"
+            placeholder="Link"
+            required
+            onChange={(e) => {
+              newResourceInfo.link = e.target.value;
+              setResourceInfo(newResourceInfo);
+            }}
+          ></input>
+          <select
+            placeholder="Topic"
+            name="Topic"
+            required
+            onChange={(e) => {
+              newResourceInfo.topic = e.target.value;
+              setResourceInfo(newResourceInfo);
+            }}
+          >
+            <option selected disabled>
+              Select Topic:
+            </option>
+            <option>General</option>
+            <option>DevOps</option>
+            <option>Support Services</option>
+            <option>Digital Development</option>
+            <option>Business Analysis</option>
+            <option>Marketing</option>
+          </select>
+          <select
+            placeholder="Type"
+            required
+            onChange={(e) => {
+              newResourceInfo.type = e.target.value;
+              setResourceInfo(newResourceInfo);
+            }}
+          >
+            <option selected disabled>
+              Select Type:
+            </option>
+            <option>Book</option>
+            <option>Website</option>
+            <option>Course</option>
+            <option>Article</option>
+            <option>Video</option>
+          </select>
+          <button onClick={handleClickSubmit}>Submit</button>
+        </div>
       </div>
     </div>
   );

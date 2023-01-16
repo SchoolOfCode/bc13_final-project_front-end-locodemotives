@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewResponse.css";
+import '../../App.css'
 import Back from '../Images/Back.png'
 
 export default function NewResponse({ author_id, post_id }) {
