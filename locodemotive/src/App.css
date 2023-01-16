@@ -373,6 +373,8 @@ body {
   width: 50px;
   justify-content: center;
   align-items: center;
+  margin-right: -160px;
+  margin-left: 100px;
 }
 
 .nav .theme-container:hover {

@@ -20,9 +20,29 @@
     width: 65%;
 }
 
-.home-post-container p {
-    font-size: 52px;
+.home-post-container a {
+    /* font-size: 52px; */
     width: 10%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.home-post-container a > button {
+    font-size: 55px;
+    background-color: transparent;
+    border: none;
+    color: #FFA500;
+    cursor: pointer;
+}
+
+.app-dark .home-post-container a > button {
+    font-size: 55px;
+    background-color: transparent;
+    border: none;
+    color: #E5619D;
     cursor: pointer;
 }
 
