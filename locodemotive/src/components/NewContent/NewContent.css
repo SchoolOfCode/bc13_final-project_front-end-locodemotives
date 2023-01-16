@@ -8,6 +8,7 @@
     padding: 10px;
     border-radius: 5px;
     animation: fadeIn 1s;
+    margin-bottom: 4vh;
 }
 
 .app-dark *::-webkit-scrollbar {
