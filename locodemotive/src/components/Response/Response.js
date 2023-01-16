@@ -6,6 +6,8 @@ export default function Response({ replies, postData }) {
   const [replyAuthors, setReplyAuthors] = useState([]);
   const [replyAuthorsImages, setReplyAuthorsImages] = useState([]);
 
+  const [replyVisability, setReplyVisability] = useState("hidden-group");
+
   async function getAuthorName(id) {
     let nameJSON = await fetch(`${process.env.REACT_APP_URL}/user/?id=${id}`);
     let name = await nameJSON.json();
@@ -25,37 +27,50 @@ export default function Response({ replies, postData }) {
     }
   }
 
+  function changeReplyVisibility() {
+    if (replyVisability === "hidden-group") {
+      setReplyVisability("show-group");
+    } else {
+      setReplyVisability("hidden-group");
+    }
+  }
+
   useEffect(() => {
     getReplyAuthors();
   }, [replies]);
 
   return (
     <div className="responses">
-      {replies.map((reply, index) => {
-        return (
-          <div className="response-info-container">
-            <div className="response-author">
-              <span>
-                <img
-                  id="pfp"
-                  src={replyAuthorsImages[index]}
-                  alt="ProfileImage"
-                ></img>
-              </span>
-              <h3>{replyAuthors[index]}</h3>
-            </div>
-            <div className="response-body-box">
-              <div className="response-date">
-                <h3>{reply.date_created.slice(0, 10)}</h3>
+      <div className={replyVisability}>
+        {replies.map((reply, index) => {
+          return (
+            <div className="response-info-container">
+              <div className="response-author">
+                <span>
+                  <img
+                    id="pfp"
+                    src={replyAuthorsImages[index]}
+                    alt="ProfileImage"
+                  ></img>
+                </span>
+                <h3>{replyAuthors[index]}</h3>
               </div>
-              <div className="response-body">
-                <p>{reply.body}</p>
+              <div className="response-body-box">
+                <div className="response-date">
+                  <h3>{reply.date_created.slice(0, 10)}</h3>
+                </div>
+                <div className="response-body">
+                  <p>{reply.body}</p>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       <div className="new-response-button">
+        <button className="show-reply-button" onClick={changeReplyVisibility}>
+          V
+        </button>
         <CustomLink to="/new_response" postData={postData}>
           New Response
         </CustomLink>
