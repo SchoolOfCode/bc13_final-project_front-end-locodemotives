@@ -82,12 +82,24 @@
     cursor: pointer;
 }
 
-p {
+.new-user-form-container button {
+    border: none;
+    background-color: #FFA500;
+    border-radius: 5px;
+    height: 60px;
+    width: 125%;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-container p {
     color: #FFA500;
     font-size: 15px;
 }
 
-p:hover {
+.login-container p:hover {
     color: #EE3780;
     cursor: pointer;
     transition: 1s;

@@ -29,6 +29,17 @@ export default function Login({ login }) {
     setPassword(e.target.value);
   }
 
+  async function createNewUser() {
+    console.log(newUserData);
+    let response = await fetch(`${process.env.REACT_APP_URL}/user/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUserData),
+    });
+    await response.json();
+    await login(newUserData.email, newUserData.password);
+  }
+
   return (
     <div className="content">
       <div className="login-container">
@@ -79,6 +90,7 @@ export default function Login({ login }) {
                 );
               })}
             </select>
+            <button onClick={createNewUser}>Create</button>
             <p
               onClick={() => {
                 setNewUser(false);
