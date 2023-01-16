@@ -13,6 +13,14 @@ export default function Login({ login }) {
   const [password, setPassword] = useState("");
   const [newUser, setNewUser] = useState(false);
 
+  const [newUserData, setNewUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    image_url: "",
+    team: "DevOps",
+  });
+
   function handleEmailChange(e) {
     setEmail(e.target.value);
   }
@@ -29,11 +37,40 @@ export default function Login({ login }) {
         </div>
         {newUser ? (
           <div className="new-user-form-container">
-            <input type="text" placeholder="Name"></input>
-            <input type="email" placeholder="Email"></input>
-            <input type="password" placeholder="Password"></input>
-            <input type="text" placeholder="Profile image URL"></input>
-            <select name="Team">
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={(e) => {
+                setNewUserData({ ...newUserData, name: e.target.value });
+              }}
+            ></input>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => {
+                setNewUserData({ ...newUserData, email: e.target.value });
+              }}
+            ></input>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                setNewUserData({ ...newUserData, password: e.target.value });
+              }}
+            ></input>
+            <input
+              type="text"
+              placeholder="Profile image URL"
+              onChange={(e) => {
+                setNewUserData({ ...newUserData, image_url: e.target.value });
+              }}
+            ></input>
+            <select
+              name="Team"
+              onChange={(e) => {
+                setNewUserData({ ...newUserData, team: e.target.value });
+              }}
+            >
               {teams.map((team, index) => {
                 return (
                   <option value={team} key={index}>
