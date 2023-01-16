@@ -9,11 +9,13 @@ export default function LearnTopic({ resourceData }) {
       <div className="topic-body">
         <div className="topic-body-info">
           <h1>{resourceData.title}</h1>
-          <p>{resourceData.description}</p>
+          <div className="topic-description">
+            <p>{resourceData.description}</p>
+          </div>
+          <a href={resourceData.link} target="_blank" rel="noreferrer">
+            <button>Access &gt;</button>
+          </a>
         </div>
-        <a href={resourceData.link} target="_blank" rel="noreferrer">
-          <button>Access &gt;</button>
-        </a>
       </div>
     </div>
   );

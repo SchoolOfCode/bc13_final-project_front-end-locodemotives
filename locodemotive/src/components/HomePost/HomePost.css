@@ -9,6 +9,7 @@
     border-radius: 5px;
     padding: 25px;
     height: 110px;
+    animation: fadeIn 1s;
 }
 
 .home-post-container h1 {
