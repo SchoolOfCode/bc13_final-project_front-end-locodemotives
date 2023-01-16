@@ -21,14 +21,6 @@ export default function Login({ login }) {
     team: "DevOps",
   });
 
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
-
-  function handlePasswordChange(e) {
-    setPassword(e.target.value);
-  }
-
   async function createNewUser() {
     let valid = validateNewInfo();
     if (valid) {
@@ -111,7 +103,7 @@ export default function Login({ login }) {
                 setNewUser(false);
               }}
             >
-              Login
+              Back To Login
             </p>
           </div>
         ) : (
@@ -119,12 +111,16 @@ export default function Login({ login }) {
             <input
               type="email"
               placeholder="Email"
-              onChange={handleEmailChange}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             ></input>
             <input
               type="password"
               placeholder="Password"
-              onChange={handlePasswordChange}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             ></input>
             <button type="button" onClick={() => login(email, password)}>
               Login
@@ -134,7 +130,7 @@ export default function Login({ login }) {
                 setNewUser(true);
               }}
             >
-              New User
+              Create New User
             </p>
           </div>
         )}
