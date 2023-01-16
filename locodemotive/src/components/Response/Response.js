@@ -43,7 +43,7 @@ export default function Response({ replies, postData }) {
   return (
     <div className="responses">
       <div className={replyVisability}>
-        {replies.map((reply, index) => {
+        {replies && replies.map && replies.map((reply, index) => {
           return (
             <div className="response-info-container">
               <div className="response-author">
