@@ -41,17 +41,17 @@ function App() {
 
   async function getUserTheme(foundTheme) {
     if (foundTheme === true) {
-      theme.dispatch({ type: 'LIGHTMODE '})
+      theme.dispatch({ type: "LIGHTMODE " });
     } else if (foundTheme === false) {
-      theme.dispatch({ type: 'DARKMODE' })
+      theme.dispatch({ type: "DARKMODE" });
     }
   }
 
-useEffect(() => {
-    const userTheme = localStorage.getItem('theme');
-    const foundTheme = JSON.parse(userTheme)
+  useEffect(() => {
+    const userTheme = localStorage.getItem("theme");
+    const foundTheme = JSON.parse(userTheme);
     getUserTheme(foundTheme);
-},[])
+  }, []);
 
   async function getUser(email, password) {
     let userFetch = await fetch(
