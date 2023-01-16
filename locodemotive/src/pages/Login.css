@@ -54,6 +54,12 @@
     width: 125%;
 }
 
+.new-user-form-container img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
 .new-user-form-container input {
     border: none;
     background-color: #F0F0F0;

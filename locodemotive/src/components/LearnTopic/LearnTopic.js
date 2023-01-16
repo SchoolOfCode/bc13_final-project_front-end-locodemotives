@@ -1,7 +1,6 @@
 import "./LearnTopic.css";
 
 export default function LearnTopic({ resourceData }) {
-
   return (
     <div className="learnTopic-topic-container">
       <div className="topic-type">

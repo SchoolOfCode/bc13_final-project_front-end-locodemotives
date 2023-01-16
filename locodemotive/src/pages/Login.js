@@ -1,6 +1,7 @@
 import "./Login.css";
 import Logo from "./Content/Logo.png";
 import { useState } from "react";
+import profileImage from "../components/Images/default_profile.png";
 
 export default function Login({ login }) {
   const teams = [
@@ -18,7 +19,7 @@ export default function Login({ login }) {
     name: "",
     email: "",
     password: "",
-    image_url: "",
+    image_url: profileImage,
     team: "DevOps",
   });
 
@@ -42,6 +43,9 @@ export default function Login({ login }) {
       newUserData.password !== "" &&
       newUserData.team !== ""
     ) {
+      if (newUserData.image_url === "") {
+        newUserData.image_url = profileImage;
+      }
       return true;
     } else {
       return false;
@@ -56,6 +60,11 @@ export default function Login({ login }) {
         </div>
         {newUser ? (
           <div className="new-user-form-container">
+            {newUserData.image_url !== "" ? (
+              <img src={newUserData.image_url} alt="profile image"></img>
+            ) : (
+              <img src={profileImage} alt="profile image"></img>
+            )}
             <input
               type="text"
               placeholder="Name"
