@@ -15,7 +15,7 @@ export default function Discuss() {
     "Buisness Analysis",
     "General",
     "Marketing",
-  ]; // Set topics that display on left side filter
+  ]; // set topics that display on left side filter
 
   async function getPosts() {
     let response = await fetch(`${process.env.REACT_APP_URL}/posts`);

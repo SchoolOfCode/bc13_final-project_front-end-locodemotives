@@ -17,9 +17,9 @@ export default function Learn() {
 
   // prettier-ignore
   const getResourcesFiltered = async () => {
-    if (type === "null" && topic === "null") { // If type and topic null get all resources
+    if (type === "null" && topic === "null") { // if type and topic null get all resources
       await getResources();
-    } else { // Else get resources by type or topic
+    } else { // else get resources by type or topic
       const response = await fetch(
         `${process.env.REACT_APP_URL}/resources/search/?topic=${topic}&type=${type}`
       );

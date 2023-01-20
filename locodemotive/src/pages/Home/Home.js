@@ -35,21 +35,21 @@ export default function Home({ userData }) {
     setMyResponses(data.payload);
   };
 
-  // Sort the 'MyPosts' into the 3 most recent posts OR replies
+  // sort the 'MyPosts' into the 3 most recent posts OR replies
   const sortPostOrReplyByDate = () => {
-    const firstThreePosts = myPosts.slice(0, 3); // Already sorted by date in database
-    const firstThreeResponses = myResponses.slice(0, 3); // Already sorted by date in database
+    const firstThreePosts = myPosts.slice(0, 3); // already sorted by date in database
+    const firstThreeResponses = myResponses.slice(0, 3); // already sorted by date in database
 
     let array = [];
-    array.push(...firstThreePosts, ...firstThreeResponses); // Combine posts and responses into a new array
+    array.push(...firstThreePosts, ...firstThreeResponses); // combine posts and responses into a new array
 
     array.sort((a, b) => {
-      return new Date(b.date_created) - new Date(a.date_created); // Sort combined array by date
+      return new Date(b.date_created) - new Date(a.date_created); // sort combined array by date
     });
 
-    array = array.slice(0, 3); // Slice array to just be first 3 posts or arrays
+    array = array.slice(0, 3); // slice array to just be first 3 posts or arrays
 
-    setPostsAndResponses(array); // Set state to new sliced array
+    setPostsAndResponses(array); // set state to new sliced array
   };
 
   useEffect(() => {

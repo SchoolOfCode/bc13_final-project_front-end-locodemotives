@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useResolvedPath, useMatch } from "react-router-dom";
 
 const MyPosts = (props) => {
-  console.log("props", props);
-
   return (
     <div className="home-post-container">
       <div className="date-topic-container">
