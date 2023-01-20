@@ -1,5 +1,5 @@
 import "./Learn.css";
-import LearnTopic from "../components/LearnTopic/LearnTopic";
+import Resource from "../../components/Resource/Resource";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -9,16 +9,17 @@ export default function Learn() {
   const [type, setType] = useState("null");
   const [topic, setTopic] = useState("null");
 
-  const getAllResources = async () => {
+  const getResources = async () => {
     const response = await fetch(`${process.env.REACT_APP_URL}/resources`);
     const data = await response.json();
     setResources(data.payload);
   };
 
-  const getResourceByTypeAndTopic = async () => {
-    if (type === "null" && topic === "null") {
-      await getAllResources();
-    } else {
+  // prettier-ignore
+  const getResourcesFiltered = async () => {
+    if (type === "null" && topic === "null") { // if type and topic null get all resources
+      await getResources();
+    } else { // else get resources by type or topic
       const response = await fetch(
         `${process.env.REACT_APP_URL}/resources/search/?topic=${topic}&type=${type}`
       );
@@ -27,18 +28,12 @@ export default function Learn() {
     }
   };
 
-  // const handleClick = async (e) => {
-  //   setType(e.target.value);
-  //   console.log(type);
-  //   await getResourceByType();
-  // };
-
   useEffect(() => {
-    getAllResources();
+    getResources();
   }, []);
 
   useEffect(() => {
-    getResourceByTypeAndTopic();
+    getResourcesFiltered();
   }, [topic, type]);
 
   return (
@@ -88,7 +83,7 @@ export default function Learn() {
           </div>
           <div className="learn-topic-container">
             {resources.map((resourceData, index) => {
-              return <LearnTopic key={index} resourceData={resourceData} />;
+              return <Resource key={index} resourceData={resourceData} />;
             })}
           </div>
         </div>

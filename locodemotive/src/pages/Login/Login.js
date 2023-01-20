@@ -1,7 +1,7 @@
 import "./Login.css";
-import Logo from "./Content/Logo.png";
+import Logo from "../Content/Logo.png";
 import { useState } from "react";
-import profileImage from "../components/Images/default_profile.png";
+import profileImage from "../../components/Images/default_profile.png";
 
 export default function Login({ login }) {
   const teams = [
@@ -10,12 +10,12 @@ export default function Login({ login }) {
     "Digital Development",
     "Business Analysis",
     "Marketing",
-  ];
+  ]; // set teams for accounts
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newUser, setNewUser] = useState(false);
 
-  const [newUserData, setNewUserData] = useState({
+  const [newData, setNewData] = useState({
     name: "",
     email: "",
     password: "",
@@ -26,25 +26,27 @@ export default function Login({ login }) {
   async function createNewUser() {
     let valid = validateNewInfo();
     if (valid) {
+      // if login data is valid, post it to database
       let response = await fetch(`${process.env.REACT_APP_URL}/user/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newUserData),
+        body: JSON.stringify(newData),
       });
       await response.json();
-      await login(newUserData.email, newUserData.password);
+      await login(newData.email, newData.password);
     }
   }
 
+  // checking if new login data exists
   function validateNewInfo() {
     if (
-      newUserData.name !== "" &&
-      newUserData.email !== "" &&
-      newUserData.password !== "" &&
-      newUserData.team !== ""
+      newData.name !== "" &&
+      newData.email !== "" &&
+      newData.password !== "" &&
+      newData.team !== ""
     ) {
-      if (newUserData.image_url === "") {
-        newUserData.image_url = profileImage;
+      if (newData.image_url === "") {
+        newData.image_url = profileImage;
       }
       return true;
     } else {
@@ -60,8 +62,8 @@ export default function Login({ login }) {
         </div>
         {newUser ? (
           <div className="new-user-form-container">
-            {newUserData.image_url !== "" ? (
-              <img src={newUserData.image_url} alt="profile image"></img>
+            {newData.image_url !== "" ? (
+              <img src={newData.image_url} alt="profile image"></img>
             ) : (
               <img src={profileImage} alt="profile image"></img>
             )}
@@ -69,34 +71,34 @@ export default function Login({ login }) {
               type="text"
               placeholder="Name"
               onChange={(e) => {
-                setNewUserData({ ...newUserData, name: e.target.value });
+                setNewData({ ...newData, name: e.target.value });
               }}
             ></input>
             <input
               type="email"
               placeholder="Email"
               onChange={(e) => {
-                setNewUserData({ ...newUserData, email: e.target.value });
+                setNewData({ ...newData, email: e.target.value });
               }}
             ></input>
             <input
               type="password"
               placeholder="Password"
               onChange={(e) => {
-                setNewUserData({ ...newUserData, password: e.target.value });
+                setNewData({ ...newData, password: e.target.value });
               }}
             ></input>
             <input
               type="text"
               placeholder="Profile image URL"
               onChange={(e) => {
-                setNewUserData({ ...newUserData, image_url: e.target.value });
+                setNewData({ ...newData, image_url: e.target.value });
               }}
             ></input>
             <select
               name="Team"
               onChange={(e) => {
-                setNewUserData({ ...newUserData, team: e.target.value });
+                setNewData({ ...newData, team: e.target.value });
               }}
             >
               {teams.map((team, index) => {

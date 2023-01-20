@@ -1,4 +1,4 @@
-import Post from "../components/Post/Post";
+import Post from "../../components/Post/Post";
 import "./Discuss.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ export default function Discuss() {
   let [posts, setPosts] = useState([]);
   let [searchTitle, setSearchTitle] = useState("null");
   let [searchTopic, setSearchTopic] = useState("null");
+
   let topics = [
     "Support Services",
     "DevOps",
@@ -14,30 +15,31 @@ export default function Discuss() {
     "Buisness Analysis",
     "General",
     "Marketing",
-  ];
+  ]; // set topics that display on left side filter
 
-  async function getAllPosts() {
-    let allPostsJSON = await fetch(`${process.env.REACT_APP_URL}/posts`);
-    let allPosts = await allPostsJSON.json();
-    setPosts(allPosts.payload);
+  async function getPosts() {
+    let response = await fetch(`${process.env.REACT_APP_URL}/posts`);
+    let data = await response.json();
+    setPosts(data.payload);
   }
 
-  async function searchForPosts() {
-    if (searchTitle === "" || searchTitle === " ") {
-      setSearchTitle("null");
+  // prettier-ignore
+  async function searchPosts() {
+    if (searchTitle === "" || searchTitle === " ") { // if state is empty
+      setSearchTitle("null");                        // set state to null (which is default state for getPosts)
     }
-    if (searchTitle === "null" && searchTopic === "null") {
-      return getAllPosts();
+    if (searchTitle === "null" && searchTopic === "null") { // where search is "null"
+      return getPosts();                                    // get posts
     }
-    let searchPostsJSON = await fetch(
+    let response = await fetch(
       `${process.env.REACT_APP_URL}/posts/search/?title=${searchTitle}&topic=${searchTopic}`
     );
-    let searchPosts = await searchPostsJSON.json();
-    setPosts(searchPosts.payload);
+    let data = await response.json();
+    setPosts(data.payload);
   }
 
   useEffect(() => {
-    getAllPosts();
+    getPosts();
   }, []);
 
   return (
@@ -47,12 +49,12 @@ export default function Discuss() {
           type="text"
           placeholder="Search"
           onChange={(e) => {
-            setSearchTitle(e.target.value);
+            setSearchTitle(e.target.value); // set search title value
           }}
         ></input>
         <select
           onChange={(e) => {
-            setSearchTopic(e.target.value);
+            setSearchTopic(e.target.value); // set search topic value
           }}
         >
           <option value={"null"}>All</option>
@@ -61,10 +63,10 @@ export default function Discuss() {
               <option value={topic} key={index}>
                 {topic}
               </option>
-            );
+            ); // take topic array and create left side filter from values
           })}
         </select>
-        <button type="submit" onClick={searchForPosts}>
+        <button type="submit" onClick={searchPosts}>
           Submit
         </button>
         <CustomLink to="/new_post">New Post</CustomLink>
