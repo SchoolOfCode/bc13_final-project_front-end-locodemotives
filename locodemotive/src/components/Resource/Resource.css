@@ -25,6 +25,7 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+    padding: 10px;
 }
 
 .learnTopic-topic-container:hover {
@@ -54,11 +55,11 @@
     align-items: center;
     background-color: #FFA500;
     height: 30px;
-    width: 100%;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    width: fit-content;
+    padding: 12px;
+    border-radius: 20px;
     font-size: 9px;
+    margin-bottom: 5px;
 }
 
 .learnTopic-topic-container .topic-type h1 {
@@ -74,7 +75,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    overflow-y: scroll;
+    overflow: auto;
     margin-bottom: 20px;
 }
 
@@ -87,7 +88,7 @@
 
 .learnTopic-topic-container .topic-body .topic-body-info h1 {
     margin: 0;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 

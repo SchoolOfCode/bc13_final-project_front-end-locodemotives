@@ -3,12 +3,12 @@ import "./Resource.css";
 export default function Resource({ resourceData }) {
   return (
     <div className="learnTopic-topic-container">
-      <div className="topic-type">
-        <h1>{resourceData.type}</h1>
-      </div>
       <div className="topic-body">
         <div className="topic-body-info">
           <h1>{resourceData.title}</h1>
+          <div className="topic-type">
+            <h1>{resourceData.type}</h1>
+          </div>
           <div className="topic-description">
             <p>{resourceData.description}</p>
           </div>
