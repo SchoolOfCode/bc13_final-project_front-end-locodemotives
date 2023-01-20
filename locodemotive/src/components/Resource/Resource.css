@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300&display=swap');
+
 *::-webkit-scrollbar {
     width: 5px;
 }
@@ -9,6 +11,18 @@
 *::-webkit-scrollbar-thumb {
     background: #FFA500;
     border-radius: 10px;
+}
+
+.resource-container a {
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+}
+
+.app-dark .resource-container a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
 }
 
 .learnTopic-topic-container {
@@ -25,6 +39,7 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+    padding: 10px;
 }
 
 .learnTopic-topic-container:hover {
@@ -36,6 +51,10 @@
     -ms-transition: all 1s ease;
     transition: all 1s ease;
     cursor: pointer;
+}
+
+.app-dark .learnTopic-topic-container {
+    border-radius: 5px;
 }
 
 .app-dark .learnTopic-topic-container:hover {
@@ -54,11 +73,12 @@
     align-items: center;
     background-color: #FFA500;
     height: 30px;
-    width: 100%;
-    padding: 10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 12px;
+    border-radius: 20px;
     font-size: 9px;
+    margin-bottom: 5px;
 }
 
 .learnTopic-topic-container .topic-type h1 {
@@ -74,7 +94,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
-    overflow-y: scroll;
+    overflow: auto;
     margin-bottom: 20px;
 }
 
@@ -87,7 +107,7 @@
 
 .learnTopic-topic-container .topic-body .topic-body-info h1 {
     margin: 0;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 
@@ -99,6 +119,7 @@
 
 .learnTopic-topic-container .topic-body .topic-body-info p {
     margin-bottom: 10px;
+    font-family: 'Heebo', sans-serif;
 }
 
 .learnTopic-topic-container .topic-body button {
