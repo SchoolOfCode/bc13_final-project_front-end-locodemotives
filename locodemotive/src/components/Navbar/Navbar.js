@@ -65,7 +65,8 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
           ) : (
             <></>
           )}
-          {/* no conditional rendering as you can change the theme on any page - without needing to be logged in */}
+          {/* no conditional rendering as you can change the theme on any page - without needing to be logged in 
+          calls the theme button component*/}
           <li className="theme-container">
             <ThemeButton />
           </li>

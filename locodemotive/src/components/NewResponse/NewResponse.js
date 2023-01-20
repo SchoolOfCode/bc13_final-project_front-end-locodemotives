@@ -24,6 +24,7 @@ export default function NewResponse({ author_id, post_id }) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            // body of fetch request uses state, props and inbuilt function for current date / time
             post: post_id,
             author: author_id,
             body: body,
@@ -32,32 +33,39 @@ export default function NewResponse({ author_id, post_id }) {
         }
       );
       await newResponseJSON.json();
+      // return to discuss page after created
       navigate("/discuss");
     }
   }
 
+  // function for back button to return to the back page
   function back() {
     navigate("/discuss");
   }
 
   return (
     <div className="page-content">
+      {/* back button using image */}
       <div className="back-button">
         <button id="back-btn" onClick={back}>
           <img src={Back} alt="back"></img>
         </button>
       </div>
+      {/* response form */}
       <div className="new-response">
         <h1>New Response</h1>
+        {/* inputs */}
         <div className="new-response-submission">
           <textarea
             type="text"
             placeholder="Response Body"
             onChange={(e) => {
+              // update state when input is changed
               setBody(e.target.value);
             }}
           ></textarea>
         </div>
+        {/* submit button */}
         <button type="submit" onClick={submitNewResponse}>
           Submit
         </button>
