@@ -3,7 +3,7 @@ html {
 }
 
 :root {
-    background-image: url('./Content/HomeBackground.png');
+    background-image: url('../Content/HomeBackground.png');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 50vw 60vw;

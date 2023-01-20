@@ -1,7 +1,7 @@
 import "./Login.css";
-import Logo from "./Content/Logo.png";
+import Logo from "../Content/Logo.png";
 import { useState } from "react";
-import profileImage from "../components/Images/default_profile.png";
+import profileImage from "../../components/Images/default_profile.png";
 
 export default function Login({ login }) {
   const teams = [
@@ -10,7 +10,7 @@ export default function Login({ login }) {
     "Digital Development",
     "Business Analysis",
     "Marketing",
-  ]; // set teams for accounts
+  ]; // Set teams for accounts
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newUser, setNewUser] = useState(false);

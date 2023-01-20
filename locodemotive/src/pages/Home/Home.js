@@ -1,8 +1,8 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
-import WhatsNew from "../components/WhatsNew/WhatsNew";
-import MyChannels from "../components/MyChannels/MyChannels";
-import MyPosts from "../components/MyPosts/MyPosts";
+import WhatsNew from "../../components/WhatsNew/WhatsNew";
+import MyChannels from "../../components/MyChannels/MyChannels";
+import MyPosts from "../../components/MyPosts/MyPosts";
 
 export default function Home({ userData }) {
   const [whatsNew, setWhatsNew] = useState([]);
