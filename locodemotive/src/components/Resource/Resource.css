@@ -1,16 +1,16 @@
 *::-webkit-scrollbar {
-    width: 5px; 
+    width: 5px;
 }
-  
+
 *::-webkit-scrollbar-track {
     background-color: #50505000;
 }
-  
+
 *::-webkit-scrollbar-thumb {
     background: #FFA500;
     border-radius: 10px;
 }
-  
+
 .learnTopic-topic-container {
     display: flex;
     flex-flow: column nowrap;
@@ -48,7 +48,7 @@
     transition: all 1s ease;
     cursor: pointer;
 }
-  
+
 .learnTopic-topic-container .topic-type {
     display: flex;
     align-items: center;
@@ -60,12 +60,12 @@
     border-top-right-radius: 5px;
     font-size: 9px;
 }
-  
+
 .learnTopic-topic-container .topic-type h1 {
     margin: 0;
     font-weight: 500;
 }
-  
+
 .learnTopic-topic-container .topic-body {
     display: flex;
     flex-flow: column nowrap;
@@ -77,14 +77,14 @@
     overflow-y: scroll;
     margin-bottom: 20px;
 }
-  
+
 .learnTopic-topic-container .topic-body .topic-body-info {
     display: flex;
     flex-flow: column;
     gap: 10px;
     /* height: 60%; */
 }
-  
+
 .learnTopic-topic-container .topic-body .topic-body-info h1 {
     margin: 0;
     font-size: 1.6em;
@@ -96,11 +96,11 @@
     min-height: min-content;
     max-height: max-content;
 }
-  
+
 .learnTopic-topic-container .topic-body .topic-body-info p {
     margin-bottom: 10px;
 }
-  
+
 .learnTopic-topic-container .topic-body button {
     width: 100%;
     height: 40px;
@@ -111,7 +111,7 @@
     -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
-  
+
 .topic-body a {
     width: 100%;
 }

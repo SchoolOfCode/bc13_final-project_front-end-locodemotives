@@ -1,6 +1,6 @@
-import "./NewContent.css";
+import "./WhatsNew.css";
 
-export default function NewContent({ title, description, link }) {
+export default function WhatsNew({ title, description, link }) {
   return (
     <div className="new-content">
       <h1>{title}</h1>

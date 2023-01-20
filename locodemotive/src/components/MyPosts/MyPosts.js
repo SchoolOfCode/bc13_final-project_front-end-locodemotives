@@ -1,8 +1,8 @@
-import "./HomePost.css";
+import "./MyPosts.css";
 import { Link } from "react-router-dom";
 import { useResolvedPath, useMatch } from "react-router-dom";
 
-const HomePost = (props) => {
+const MyPosts = (props) => {
   console.log("props", props);
 
   return (
@@ -29,4 +29,4 @@ function CustomLink({ to, children, ...props }) {
   );
 }
 
-export default HomePost;
+export default MyPosts;

@@ -1,9 +1,9 @@
 import Pluralsight from "./Images/Pluralsight.png";
 import Sharepoint from "./Images/Sharepoint.png";
 import Resonate from "./Images/ResonateWhite.png";
-import "./ChannelContent.css";
+import "./MyChannels.css";
 
-export default function ChannelContent() {
+export default function MyChannels() {
   return (
     <div className="channel-container">
       <a href="https://app.pluralsight.com/id" target="_blank" rel="noreferrer">

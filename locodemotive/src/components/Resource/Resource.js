@@ -1,6 +1,6 @@
-import "./LearnTopic.css";
+import "./Resource.css";
 
-export default function LearnTopic({ resourceData }) {
+export default function Resource({ resourceData }) {
   return (
     <div className="learnTopic-topic-container">
       <div className="topic-type">
