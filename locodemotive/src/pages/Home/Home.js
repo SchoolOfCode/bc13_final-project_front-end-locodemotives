@@ -111,7 +111,7 @@ export default function Home({ userData }) {
               <WhatsNew
                 title={whatsNew[1].title}
                 description={whatsNew[1].description}
-                link={whatsNew[2].link}
+                link={whatsNew[1].link}
               />
             ) : (
               <></>
