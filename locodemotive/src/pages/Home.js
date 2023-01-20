@@ -36,9 +36,9 @@ export default function Home({ userData }) {
   };
 
   // Sort the 'MyPosts' into the 3 most recent posts OR replies
-  const sortPostOrReplyByDate = async () => {
-    const firstThreePosts = await myPosts.slice(0, 3); // Already sorted by date in database
-    const firstThreeResponses = await myResponses.slice(0, 3); // Already sorted by date in database
+  const sortPostOrReplyByDate = () => {
+    const firstThreePosts = myPosts.slice(0, 3); // Already sorted by date in database
+    const firstThreeResponses = myResponses.slice(0, 3); // Already sorted by date in database
 
     let postAndReplies = [];
     postAndReplies.push(...firstThreePosts, ...firstThreeResponses); // Combine posts and responses into a new array
@@ -60,7 +60,7 @@ export default function Home({ userData }) {
 
   useEffect(() => {
     sortPostOrReplyByDate();
-  }, [myResponses]);
+  }, [myPosts, myResponses]);
 
   return (
     <div className="my-learning">
