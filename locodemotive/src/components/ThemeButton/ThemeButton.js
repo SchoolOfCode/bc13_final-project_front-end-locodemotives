@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext.js";
-import "./ThemeBtn.css";
+import "./ThemeButton.css";
 import Moon from "../Images/Moon.svg";
 import Sun from "../Images/Sun.svg";
 
@@ -28,6 +28,7 @@ export default function ThemeButton() {
 
   return (
     // conditional rendering as button look depends on current theme
+
     <button
       className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
       onClick={onClick}

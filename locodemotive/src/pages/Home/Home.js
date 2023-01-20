@@ -1,22 +1,22 @@
 import "./Home.css";
-import NewContent from "../components/NewContent/NewContent";
-import ChannelContent from "../components/ChannelContent/ChannelContent";
 import { useEffect, useState } from "react";
-import HomePost from "../components/HomePost/HomePost";
+import WhatsNew from "../../components/WhatsNew/WhatsNew";
+import MyChannels from "../../components/MyChannels/MyChannels";
+import MyPosts from "../../components/MyPosts/MyPosts";
 
 export default function Home({ userData }) {
-  const [newContent, setNewContent] = useState([]);
+  const [whatsNew, setWhatsNew] = useState([]);
   const [myPosts, setMyPosts] = useState([]);
   const [myResponses, setMyResponses] = useState([]);
 
   const [postsAndResponses, setPostsAndResponses] = useState([]);
 
-  async function getNewContent() {
+  async function getWhatsNew() {
     let newResourcesJSON = await fetch(
       `${process.env.REACT_APP_URL}/resources/search/?topic=${userData.team}&type=null`
     );
     let newResources = await newResourcesJSON.json();
-    setNewContent(newResources.payload);
+    setWhatsNew(newResources.payload);
   }
 
   async function getMyPosts() {
@@ -40,20 +40,20 @@ export default function Home({ userData }) {
     const firstThreePosts = myPosts.slice(0, 3); // Already sorted by date in database
     const firstThreeResponses = myResponses.slice(0, 3); // Already sorted by date in database
 
-    let postAndReplies = [];
-    postAndReplies.push(...firstThreePosts, ...firstThreeResponses); // Combine posts and responses into a new array
+    let array = [];
+    array.push(...firstThreePosts, ...firstThreeResponses); // Combine posts and responses into a new array
 
-    postAndReplies.sort((a, b) => {
+    array.sort((a, b) => {
       return new Date(b.date_created) - new Date(a.date_created); // Sort combined array by date
     });
 
-    postAndReplies = postAndReplies.slice(0, 3); // Slice array to just be first 3 posts or arrays
+    array = array.slice(0, 3); // Slice array to just be first 3 posts or arrays
 
-    setPostsAndResponses(postAndReplies); // Set state to new sliced array
+    setPostsAndResponses(array); // Set state to new sliced array
   };
 
   useEffect(() => {
-    getNewContent();
+    getWhatsNew();
     getMyPosts();
     getMyResponses();
   }, []);
@@ -68,7 +68,7 @@ export default function Home({ userData }) {
         <div className="my-area">
           <h1>My Posts</h1>
           {postsAndResponses[0] ? (
-            <HomePost
+            <MyPosts
               topic={postsAndResponses[0].topic}
               title={postsAndResponses[0].body}
               date={postsAndResponses[0].date_created.slice(0, 10)}
@@ -77,7 +77,7 @@ export default function Home({ userData }) {
             <></>
           )}
           {postsAndResponses[1] ? (
-            <HomePost
+            <MyPosts
               topic={postsAndResponses[1].topic}
               title={postsAndResponses[1].body}
               date={postsAndResponses[1].date_created.slice(0, 10)}
@@ -86,7 +86,7 @@ export default function Home({ userData }) {
             <></>
           )}
           {postsAndResponses[2] ? (
-            <HomePost
+            <MyPosts
               topic={postsAndResponses[2].topic}
               title={postsAndResponses[2].body}
               date={postsAndResponses[2].date_created.slice(0, 10)}
@@ -98,29 +98,29 @@ export default function Home({ userData }) {
         <div className="whats-new">
           <h1>What's New</h1>
           <div className="new-content-container">
-            {newContent[0] ? (
-              <NewContent
-                title={newContent[0].title}
-                description={newContent[0].description}
-                link={newContent[0].link}
+            {whatsNew[0] ? (
+              <WhatsNew
+                title={whatsNew[0].title}
+                description={whatsNew[0].description}
+                link={whatsNew[0].link}
               />
             ) : (
               <></>
             )}
-            {newContent[1] ? (
-              <NewContent
-                title={newContent[1].title}
-                description={newContent[1].description}
-                link={newContent[2].link}
+            {whatsNew[1] ? (
+              <WhatsNew
+                title={whatsNew[1].title}
+                description={whatsNew[1].description}
+                link={whatsNew[2].link}
               />
             ) : (
               <></>
             )}
-            {newContent[2] ? (
-              <NewContent
-                title={newContent[2].title}
-                description={newContent[2].description}
-                link={newContent[2].link}
+            {whatsNew[2] ? (
+              <WhatsNew
+                title={whatsNew[2].title}
+                description={whatsNew[2].description}
+                link={whatsNew[2].link}
               />
             ) : (
               <></>
@@ -130,7 +130,7 @@ export default function Home({ userData }) {
       </div>
       <div className="my-channels">
         <h1>My Channels</h1>
-        <ChannelContent />
+        <MyChannels />
       </div>
     </div>
   );

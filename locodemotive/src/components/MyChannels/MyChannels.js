@@ -1,13 +1,13 @@
 import Pluralsight from "./Images/Pluralsight.png";
 import Sharepoint from "./Images/Sharepoint.png";
 import Resonate from "./Images/ResonateWhite.png";
-import "./ChannelContent.css";
+import "./MyChannels.css";
 
 // html for external channels on home page
 // each link <a></a> is around a <div> including image <img> and text <h2> component
 // target="_blank" means link opens on new page
 
-export default function ChannelContent() {
+export default function MyChannels() {
   return (
     <div className="channel-container">
       {/* pluralsight */}
