@@ -303,7 +303,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1rem;
-  align-items: stretch;
+  align-items: center;
 }
 
 .nav a {
@@ -314,6 +314,7 @@ body {
   align-items: center;
   padding: .50rem;
   font-size: 20px;
+  border-radius: 20px;
 }
 
 .nav li {
@@ -322,6 +323,7 @@ body {
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
+  border-radius: 20px;
 }
 
 .nav li.active {
@@ -360,6 +362,8 @@ body {
   -o-transition: all 1s ease;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
+  border-radius: 20px;
+  padding: 8px;
 }
 
 .nav button.btn {
@@ -367,6 +371,7 @@ body {
   margin-left: 30px;
   justify-content: center;
   align-items: center;
+  height: 20px;
 }
 
 .nav .theme-container {
