@@ -57,6 +57,7 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
           )}
           {isAuthenticated ? (
             <CustomLink to="/settings">
+              {/* setting button shows the profile image instead of text - this is passed to CustomLink component as "children" */}
               <span>
                 <img id="pfp" src={userData.image_url} alt="ProfileImage"></img>
               </span>
@@ -64,11 +65,13 @@ export default function Navbar({ isAuthenticated, logout, userData }) {
           ) : (
             <></>
           )}
+          {/* no conditional rendering as you can change the theme on any page - without needing to be logged in */}
           <li className="theme-container">
             <ThemeButton />
           </li>
         </ul>
       </nav>
+      {/* conditional rendering used to only show the notifications tab when state is true. this is toggled by notification button being clicked*/}
       {isNoteOpen && <NotificationTab />}
     </>
   );
