@@ -10,7 +10,7 @@ export default function Login({ login }) {
     "Digital Development",
     "Business Analysis",
     "Marketing",
-  ]; // Set teams for accounts
+  ]; // set teams for accounts
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newUser, setNewUser] = useState(false);
@@ -26,7 +26,7 @@ export default function Login({ login }) {
   async function createNewUser() {
     let valid = validateNewInfo();
     if (valid) {
-      // If login data is valid, post it to database
+      // if login data is valid, post it to database
       let response = await fetch(`${process.env.REACT_APP_URL}/user/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ export default function Login({ login }) {
     }
   }
 
-  // Checking if new login data exists
+  // checking if new login data exists
   function validateNewInfo() {
     if (
       newData.name !== "" &&

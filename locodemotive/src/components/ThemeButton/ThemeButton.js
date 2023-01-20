@@ -12,7 +12,7 @@ export default function ThemeButton() {
   // see if darkMode is true/false currently
   const darkMode = theme.state.darkMode;
 
-  //   when button clicked ...
+  // when button clicked ...
   const onClick = () => {
     // if currently darkmode switch to light mode
     if (darkMode) {
