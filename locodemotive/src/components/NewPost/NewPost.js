@@ -4,7 +4,7 @@ import "./NewPost.css";
 import "../../App.css";
 import Back from "../Images/Back.png";
 
-// component for form to collect date to make a new post
+// component for form to collect data to make a new post
 // props bring in infomation about user as author is needed when creating a post
 
 export default function NewPost({ userData }) {
@@ -74,6 +74,7 @@ export default function NewPost({ userData }) {
             placeholder="Title"
             required
             onChange={(e) => {
+              // whenever input is changed it updates state to keep track
               setTitle(e.target.value);
             }}
           ></input>
@@ -86,6 +87,7 @@ export default function NewPost({ userData }) {
               setBody(e.target.value);
             }}
           ></textarea>
+          {/* dropdown selection changes topic state */}
           <select
             required
             onChange={(e) => {
@@ -96,6 +98,7 @@ export default function NewPost({ userData }) {
             <option selected disabled>
               Select Topic:
             </option>
+            {/* creates an option for each topic in the array defined at the start */}
             {topics.map((topic, index) => {
               return (
                 <option value={topic} key={index}>
@@ -105,6 +108,7 @@ export default function NewPost({ userData }) {
             })}
           </select>
         </div>
+        {/* button to submit - calls function */}
         <button type="submit" onClick={submitNewPost}>
           Submit
         </button>
