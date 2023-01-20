@@ -1,4 +1,4 @@
-import Post from "../components/Post/Post";
+import Post from "../../components/Post/Post";
 import "./Discuss.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";

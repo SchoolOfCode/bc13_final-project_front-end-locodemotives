@@ -1,5 +1,5 @@
 import "./Learn.css";
-import Resource from "../components/Resource/Resource";
+import Resource from "../../components/Resource/Resource";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 

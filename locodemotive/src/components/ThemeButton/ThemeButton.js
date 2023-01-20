@@ -1,29 +1,31 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext.js";
-import './ThemeBtn.css'
-import Moon from '../Images/Moon.svg';
-import Sun from '../Images/Sun.svg';
+import "./ThemeButton.css";
+import Moon from "../Images/Moon.svg";
+import Sun from "../Images/Sun.svg";
 
 function ThemeButton() {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
-    const onClick = () => {
-        if (darkMode) {
-            theme.dispatch({ type: "LIGHTMODE" });
-            localStorage.setItem('theme', true)
-        }
-        else {
-            theme.dispatch({ type: "DARKMODE" });
-            localStorage.setItem('theme', false)
-        }
-    };
+  const onClick = () => {
+    if (darkMode) {
+      theme.dispatch({ type: "LIGHTMODE" });
+      localStorage.setItem("theme", true);
+    } else {
+      theme.dispatch({ type: "DARKMODE" });
+      localStorage.setItem("theme", false);
+    }
+  };
 
-    return (
-        <button className={`btn ${darkMode ? "btn-dark" : "btn-light"}`} onClick={onClick}>
-            <img src={darkMode ? Sun : Moon} alt="theme"></img>
-        </button>
-    )
+  return (
+    <button
+      className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
+      onClick={onClick}
+    >
+      <img src={darkMode ? Sun : Moon} alt="theme"></img>
+    </button>
+  );
 }
 
 export default ThemeButton;

@@ -1,34 +1,37 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home.js";
-import Learn from "./pages/Learn.js";
-import Discuss from "./pages/Discuss.js";
-import Settings from "./pages/Settings.js";
-import Login from "./pages/Login";
-import CreateResponse from "./pages/CreateResponse";
-import CreatePost from "./pages/CreatePost";
-import CreateResource from "./pages/CreateResource";
+import Home from "./pages/Home/Home.js";
+import Learn from "./pages/Learn/Learn.js";
+import Discuss from "./pages/Discuss/Discuss.js";
+import Settings from "./pages/Settings/Settings.js";
+import Login from "./pages/Login/Login.js";
+import NewResponsePage from "./pages/NewResponsePage";
+import NewPostPage from "./pages/NewPostPage/NewPostPage";
+import NewResourcePage from "./pages/NewResourcePage";
+
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import PrivateRoute from "./PrivateRoute";
 import { ThemeContext } from "./hooks/ThemeContext";
 
 function App() {
-  const navigate = useNavigate();
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const navigate = useNavigate(); // gets the current location in site
+
+  const theme = useContext(ThemeContext); // setting context provider for dark mode
+  const darkMode = theme.state.darkMode; // current state of dark mode context
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
 
   async function getUserStatus(foundUser) {
-    let checkUser = await fetch(
+    let response = await fetch(
       `${process.env.REACT_APP_URL}/user/?id=${foundUser}`
     );
-    let checkUserData = await checkUser.json();
-    if (foundUser === checkUserData.payload.user_id) {
-      login();
-      setUser(checkUserData.payload);
+    let data = await response.json();
+    // checks user id from local storage compares it to user data in backend
+    if (foundUser === data.payload.user_id) {
+      login(); // automatically login if all data matches
+      setUser(data.payload);
     }
   }
 
@@ -36,13 +39,13 @@ function App() {
     const loggedInUser = localStorage.getItem("user");
     const foundUser = JSON.parse(loggedInUser);
     getUserStatus(foundUser);
-  }, []);
+  }, []); // get user id from local storage
 
   async function getUserTheme(foundTheme) {
     if (foundTheme === true) {
-      theme.dispatch({ type: "LIGHTMODE " });
+      theme.dispatch({ type: "LIGHTMODE " }); // action sent to useReducer to turn the state to false (see ThemeContext.js)
     } else if (foundTheme === false) {
-      theme.dispatch({ type: "DARKMODE" });
+      theme.dispatch({ type: "DARKMODE" }); // action sent to useReducer to turn the state to true (see ThemeContext.js)
     }
   }
 
@@ -50,7 +53,7 @@ function App() {
     const userTheme = localStorage.getItem("theme");
     const foundTheme = JSON.parse(userTheme);
     getUserTheme(foundTheme);
-  }, []);
+  }, []); // get theme from local storage
 
   async function getUser(email, password) {
     let userFetch = await fetch(
@@ -76,17 +79,17 @@ function App() {
       setUser({});
       return "Incorrect Email!";
     }
-  }
+  } // login system that checks the email and password are correct
 
   const login = () => {
     setIsAuthenticated(true);
     navigate("/home");
-  };
+  }; // sends user to home page once logged in
 
   const logout = () => {
     setIsAuthenticated(false);
     localStorage.clear();
-  };
+  }; // sends user to login page when logged out
 
   return (
     <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
@@ -146,7 +149,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<CreateResponse userData={user} />}
+              component={<NewResponsePage userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
@@ -156,7 +159,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<CreatePost userData={user} />}
+              component={<NewPostPage userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
@@ -166,7 +169,7 @@ function App() {
           element={
             <PrivateRoute
               redirectTo="/login"
-              component={<CreateResource userData={user} />}
+              component={<NewResourcePage userData={user} />}
               isAuthenticated={isAuthenticated}
             />
           }
