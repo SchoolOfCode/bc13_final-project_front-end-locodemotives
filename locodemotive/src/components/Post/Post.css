@@ -1,0 +1,219 @@
+.post-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    margin-bottom: 5vh;
+    animation: fadeIn 1s;
+}
+
+.post-container:first-child {
+    margin-top: 4vh;
+} 
+
+.post-container:last-child {
+    margin-bottom: 4vh;
+} 
+
+.post-title-bar {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFA500;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.post-title-topic {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-left: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-weight: 500;
+    width: 100%;
+}
+
+.topic-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: #ffffff;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+} 
+
+.topic-container h3 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #d9d9d99a;
+    padding: 20px;
+    gap: 20px;
+    animation: fadeIn 1s;
+}
+
+.post-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: #FFA500;
+    width: 150px;
+    min-height: 200px;
+    border-radius: 5px;
+}
+
+.post-author span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-author span img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.post-author > h3 {
+    text-align: center;
+    font-weight: 400;
+}
+
+h3 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.post-body-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.post-date {
+    background-color: #FFA500;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 13px;
+    height: 10%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.post-body {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 25px;
+    height: 90%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.post-body-delete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.deleteButton {
+    border: none;
+    background-color: #EE3780;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.deleteButton:hover {
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.post-title-topic button.arrow-down {
+    font-size: 50px;
+    margin: 0;
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.title-arrow-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 30px;
+}
+
+.hidden-post {
+    display: none;
+}
+
+.post-body-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #d9d9d99a;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.app-dark .post-body-container {
+    background-color: #161620;
+}

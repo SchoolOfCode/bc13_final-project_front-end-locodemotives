@@ -1,0 +1,25 @@
+nav button img {
+    height: 35px;
+    width: 35px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark nav button img {
+    filter: invert();
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

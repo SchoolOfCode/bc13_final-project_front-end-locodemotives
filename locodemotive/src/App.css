@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap');
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+:root {
+  --main-light: #FFA500;
+  --main-light-bg: #ffffff;
+  --main-light-btn: #EE3780;
+  --main-light-btn-hover: #c27f03;
+  --main-light-selector-hover: #a1a1a1;
+  --main-light-grey-btn: #E6E6E6;
+
+  --main-dark: #E5619D;
+  --main-dark-secondary: #b84d7d;
+  --main-dark-bg1: #161620;
+  --main-dark-bg2: #12121a;
+  --main-dark-btn: #5EB9BA;
+  --main-dark-btn-hover: #a8275b;
+
+  background-color: var(--main-light-bg);
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.app-dark { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--main-dark-bg1);
+  overflow-x: hidden;
+}
+
+.app-light { 
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--main-light-bg);
+  overflow-x: hidden;
+}
+
+.app-dark {
+  background-color: var(--main-dark-bg1);
+  transition: 0.5s;
+  color: var(--main-light-bg);
+}
+
+.app-dark html {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark .login-container {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .login-container .logo-container {
+  background-color: var(--main-dark);
+}
+
+.app-dark .login-container .login-form-container button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .login-container .login-form-container input {
+  background-color: var(--main-dark-bg1);
+  color: var(--main-light-bg);
+}
+
+.app-dark nav {
+  background-color: var(--main-dark-bg2);
+  color: var(--main-dark);
+}
+
+.app-dark nav li.active {
+  background-color: var(--main-dark);
+}
+
+.app-dark nav li:hover {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark nav .site-title img:hover {
+  -webkit-filter: hue-rotate(-60deg) contrast(200%) brightness(60%);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(60%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark nav button#bell:hover {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark nav button#bell img {
+  -webkit-filter: hue-rotate(-60deg);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(90%);
+}
+
+.app-dark nav .site-title img {
+  -webkit-filter: hue-rotate(-60deg);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(90%);
+}
+
+.app-dark nav button:nth-child(1) {
+  color: var(--main-light-bg);
+}
+
+.app-dark nav button:nth-child(1):hover {
+  background-color: var(--main-dark-btn);
+  color: var(--main-light-bg);
+}
+
+.app-dark .explore-container button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .learn-topic-container .topic-container .topic-type {
+  background-color: var(--main-dark);
+}
+
+.app-dark .learn-topic-container div {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .explore-header-selectors select {
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
+}
+
+.app-dark .my-area select {
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
+}
+
+.app-dark .whats-new .new-content {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .whats-new .new-content button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .navigation-bar input {
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
+}
+
+.app-dark .navigation-bar button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .navigation-bar select {
+  background-color: var(--main-dark-bg2);
+  color: var(--main-light-bg);
+}
+
+.app-dark .post .post-info {
+  background-color: var(--main-dark);
+}
+
+.app-dark .post .post-info .topic-container {
+  background-color: var(--main-dark-secondary);
+}
+
+.app-dark .response .response-info {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .response .response-info .response-info-container {
+  background-color: var(--main-dark);
+}
+
+.app-dark .response .response-info .response-info-container .response-body {
+  background-color: var(--main-dark-secondary);
+}
+
+.app-dark .response .response-info button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .notification-tab {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .notification {
+  background-color: var(--main-dark);
+}
+
+.app-dark body::-webkit-scrollbar {
+  width: 5px; 
+}
+
+.app-dark body::-webkit-scrollbar-track {
+  background-color: #50505000;
+}
+
+.app-dark body::-webkit-scrollbar-thumb {
+  background: var(--main-dark);
+  border-radius: 10px;
+}
+
+.app-dark .settings-menu {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .settings-menu .settings-navbar {
+  background-color: var(--main-dark-bg2);
+}
+.app-dark .settings-menu .settings-navbar ul {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .settings-menu .settings-navbar ul li button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .settings-general-content div {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark .settings-general-content div button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .settings-account-content div {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark .settings-account-content div button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .topics h2:hover {
+  color: var(--main-dark);
+}
+
+.app-light {
+  background-color: var(--main-light-bg);
+  transition: 0.5s;
+  color: var(--main-dark-bg1);
+}
+
+
+app-light *::-webkit-scrollbar {
+  width: 5px; 
+}
+
+app-light *::-webkit-scrollbar-track {
+  background-color: #50505000;
+}
+
+app-light *::-webkit-scrollbar-thumb {
+  background: var(--main-light);
+  border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+}
+
+.nav {
+  background-color: var(--main-light-bg);
+  color: var(--main-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 17rem;
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.23);
+}
+
+.site-title img {
+  width: 150px;
+  height: 80px;
+  transition: all 1s ease;
+}
+
+.site-title img:hover {
+  -webkit-filter: brightness(60%);
+  filter: brightness(60%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .50rem;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.nav li {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 20px;
+}
+
+.nav li.active {
+  background-color: var(--main-light);
+  color: var(--main-light-bg);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav li.active a {
+  font-weight: 600;
+}
+
+.nav li:hover {
+  background-color: rgb(230, 230, 230);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav button {
+  border: none;
+  font-size: 20px;
+  color: var(--main-light-btn);
+  background-color: #50505000;
+  font-weight: 300;
+  height: 100%;
+  width: 100px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.nav button.btn {
+  width: 50px;
+  margin-left: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.nav .theme-container {
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-right: -160px;
+  margin-left: 130px;
+}
+
+.nav .theme-container:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.nav button:hover {
+  background-color: var(--main-light-btn);
+  color: var(--main-light-bg);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.explore-header-top button:hover {
+  background-color: var(--main-light-btn-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.explore-header-selectors button:hover {
+  background-color: var(--main-light-selector-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.topic-container .topic-body button:hover {
+  background-color: var(--main-light-btn-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-top button:hover {
+  background-color: var(--main-dark-btn-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .explore-header-selectors button:hover {
+  background-color: var(--main-dark-btn-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .topic-container .topic-body button:hover {
+  background-color: var(--main-dark-btn-hover);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark .post-title-bar {
+  background-color: var(--main-dark);
+}
+
+.app-dark .post-title-topic .topic-container {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark .post {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .post .post-body {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .post-date {
+  background-color: var(--main-dark);
+}
+
+.app-dark .post-author {
+  background-color: var(--main-dark);
+}
+
+.app-dark .responses {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .response-info-container {
+  background-color: var(--main-dark-bg2);
+}
+
+.app-dark .response-author {
+  background-color: var(--main-dark);
+}
+
+.app-dark .response-date {
+  background-color: var(--main-dark);
+}
+
+.app-dark .response-body {
+  background-color: var(--main-dark-bg1);
+}
+
+.app-dark .new-response-button button {
+  background-color: var(--main-dark);
+}
+
+.post-date h3 {
+  font-weight: 500;
+}
+
+.response-date h3 {
+  font-weight: 500;
+}
+
+.app-dark .topic-body button:hover {
+  background-color: var(--main-dark-btn-hover);
+}
+
+.topic-body button:hover {
+  background-color: var(--main-light-btn-hover);
+}
+
+.app-dark .learnTopic-topic-container .topic-type {
+  background-color: var(--main-dark);
+}
+
+.app-dark .login-form-container p {
+  color: var(--main-dark);
+}
+
+.app-dark .new-user-form-container button {
+  background-color: var(--main-dark);
+}
+
+.app-dark .new-user-form-container p {
+  color: var(--main-dark);
+}
+
+.app-dark .new-user-form-container input {
+  background-color: var(--main-dark-bg1);
+  color: #fff;
+}
+
+.app-dark .new-user-form-container select {
+  background-color: var(--main-dark-bg1);
+  color: #fff;
+}
+
+.channel-container div:hover {
+  filter: brightness(75%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.channel-container div {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.page-buttons button {
+  color: #fff;
+  cursor: pointer;
+}
+
+#back-btn {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  margin-left: 5vw;
+  margin-top: 6vh;
+  position: absolute;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#back-btn:hover {
+  filter: brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.app-dark #back-btn {
+  -webkit-filter: hue-rotate(-60deg) contrast(200%);
+  filter: hue-rotate(-60deg) contrast(200%);
+}
+
+.app-dark #back-btn:hover {
+  -webkit-filter: hue-rotate(-60deg) contrast(200%) brightness(70%);
+  filter: hue-rotate(-60deg) contrast(200%) brightness(70%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}

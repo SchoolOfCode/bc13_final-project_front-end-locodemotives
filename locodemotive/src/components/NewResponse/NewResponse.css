@@ -1,0 +1,81 @@
+.new-response {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 13vw;
+    margin-right: 13vw;
+    margin-top: 1vh;
+    padding: 30px;
+}
+
+.new-response h1 {
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
+.new-response .new-response-submission {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    gap: 30px;
+}
+
+.new-response .new-response-submission textarea {
+    height: 300px;
+    border: none;
+    background-color: #D9D9D9;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.new-response button {
+    border: none;
+    background-color: #FFA500;
+    color: #fff;
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    margin-top: 3vh;
+    font-size: 1em;
+    cursor: pointer;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.new-response button:hover {
+    background-color: #c27f03;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark .new-response button {
+    background-color: #EE3780;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark .new-response button:hover {
+    background-color: #a8275b;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.app-dark .new-response textarea {
+    background-color: #12121a;
+    color: #fff;
+}
+

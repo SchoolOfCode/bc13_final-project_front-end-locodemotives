@@ -1,0 +1,48 @@
+nav ul #bell {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+nav ul #bell:hover {
+    background-color: rgb(230, 230, 230);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+nav ul #bell img {
+    height: 40px;
+    width: 30px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span img {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+}
+
+.theme-container button {
+    padding: 25px;
+}
+
+.theme-container button:hover {
+    background-color: #FFA500;
+}

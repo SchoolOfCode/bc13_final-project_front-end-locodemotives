@@ -1,0 +1,81 @@
+.home-post-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    gap: 25px;
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    padding: 25px;
+    height: 110px;
+    animation: fadeIn 1s;
+}
+
+.home-post-container h1 {
+    margin: 0;
+}
+
+.home-post-container h2 {
+    width: 65%;
+}
+
+.home-post-container a {
+    /* font-size: 52px; */
+    width: 10%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.home-post-container a > button {
+    font-size: 55px;
+    background-color: transparent;
+    border: none;
+    color: #FFA500;
+    cursor: pointer;
+}
+
+.app-dark .home-post-container a > button {
+    font-size: 55px;
+    background-color: transparent;
+    border: none;
+    color: #E5619D;
+    cursor: pointer;
+}
+
+.date-topic-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.home-post-container .topic-container {
+    font-size: 12px;
+    background-color: #FFA500;
+}
+
+.date-topic-container > h3 {
+    font-weight: 500;
+}
+
+.app-dark .home-post-container {
+    background-color: #12121a;
+}
+
+.app-dark .home-post-container h1 {
+    color: #fff;
+}
+
+.app-dark .home-post-container h3 {
+    color: #fff;
+}
+
+.app-dark .home-post-container .topic-container {
+    background-color: #E5619D;
+}

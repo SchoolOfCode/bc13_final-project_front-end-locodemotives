@@ -1,0 +1,112 @@
+.content {
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background-color: #fff;
+    gap: 15px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    width: max-content;
+    height: max-content;
+    -webkit-box-shadow: 0px 0px 24px -5px rgba(0, 0, 0, 0.76);
+    box-shadow: 0px 0px 24px -5px rgba(0, 0, 0, 0.76);
+}
+
+.logo-container {
+    background-color: #FFA500;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.logo-container img {
+    width: 250px;
+    height: 130px;
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.new-user-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.login-form-container input {
+    border: none;
+    background-color: #F0F0F0;
+    padding: 0.75em;
+    border-radius: 5px;
+    width: 125%;
+}
+
+.new-user-form-container img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.new-user-form-container input {
+    border: none;
+    background-color: #F0F0F0;
+    padding: 0.75em;
+    border-radius: 5px;
+    width: 125%;
+}
+
+.new-user-form-container select {
+    border: none;
+    background-color: #F0F0F0;
+    padding: 0.75em;
+    border-radius: 5px;
+    width: 125%;
+}
+
+.login-form-container button {
+    border: none;
+    background-color: #FFA500;
+    border-radius: 5px;
+    height: 60px;
+    width: 125%;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.new-user-form-container button {
+    border: none;
+    background-color: #FFA500;
+    border-radius: 5px;
+    height: 60px;
+    width: 125%;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-container p {
+    color: #FFA500;
+    font-size: 15px;
+}
+
+.login-container p:hover {
+    color: #EE3780;
+    cursor: pointer;
+    transition: 1s;
+}
